@@ -14,8 +14,8 @@ VERSION = '2019-01-05'
 
 api_path = os.path.normpath('ID/API_KEY.txt')
 assistant_path = os.path.normpath('ID/ASSISTANT_ID.txt')
-API_KEY = open(api_path).read()
-ASSISTANT_ID = open(assistant_path).read()
+API_KEY = str.rstrip(open(api_path).read())  # Load API Key from file, removing trailing whitespace
+ASSISTANT_ID = str.rstrip(open(assistant_path).read())  # Load Assistant ID from file, removing trailing whitespace
 
 userInp = ''  # Sending empty string will give back the welcome message, so initialize it to that
 contextVar = {'skills': {'main skill': {'user_defined': {'person': USER_NAME}}}}

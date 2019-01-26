@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+
+from discord.ext import commands
+import os
+
+token_path = os.path.normpath('ID/DISCORD_BOT_TOKEN.txt')
+TOKEN = str.rstrip(open(token_path).read())  # Load Token from file, removing trailing whitespace
+
+
+description = '''a test python bot'''
+bot = commands.Bot(command_prefix='?', description=description)
+
+
+@bot.event
+async def on_ready():
+    print('Niko has logged in as')
+    print(bot.user.name)
+    print(bot.user.id)
+    print('------')
+
+
+@bot.command()
+async def add(left : int, right : int):
+    """Adds two numbers together."""
+    await bot.say(left + right)
+
+
+@bot.command(pass_context=True)
+async def ping(ctx):
+    """Pong!"""
+    t = await bot.say('Calculating...')
+    ms = (t.timestamp-ctx.message.timestamp).total_seconds() * 1000
+    await bot.edit_message(t, new_content='Pong! Took: {}ms'.format(int(ms)))
+
+
+@bot.listen()
+async def on_message(message):
+    if message.author.bot:  # If the bot sent the message
+        return  # Don't do anything with it
+    if message.content.startswith('!hello'):
+        await bot.say("test")
+    content = 'confused cat noises'
+    msg = '{0.mention}, {1}'.format(message.author, content)
+    await bot.send_message(message.channel, msg)
+
+
+bot.run(TOKEN)

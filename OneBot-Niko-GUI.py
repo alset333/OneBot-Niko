@@ -4,12 +4,20 @@ import WatsonAssistantV2Utility
 import tkinter as tk
 import os
 
+
 __author__ = 'Peter Maar'
 __version__ = '0.3.0'
 
 DEBUG = False
+STEAM_LIBRARY_PATH = "D:\\Steam"
 
 VERSION = '2019-01-11'
+
+steam_location = os.path.normpath(STEAM_LIBRARY_PATH + "/steamapps/common/OneShot/")
+if os.path.isdir(steam_location):
+    faces_location = os.path.normpath(steam_location + "/Graphics/Faces")
+
+print(steam_location)
 
 api_path = os.path.normpath('ID/API_KEY.txt')
 assistant_path = os.path.normpath('ID/ASSISTANT_ID.txt')
@@ -32,6 +40,10 @@ def clean_exit():
     exit(0)
 
 
+def send():
+    None
+
+
 root = tk.Tk()
 
 # Get screen size
@@ -49,12 +61,17 @@ mainSize = 2 * screen_size // 3
 userCanvas = tk.Canvas(root)  # Buttons and user input
 nikoCanvas = tk.Canvas(root, height=0.25*mainSize, width=mainSize)  # Response and Niko's face
 
-# Exit Button
-exitButton = tk.Button(userCanvas, text="Quit", command=clean_exit)
-exitButton.pack()
-
 user_input_field = tk.Entry(root)
 user_input_field.pack()
+
+# Send Button
+sendButton = tk.Button(userCanvas, text="Send", command=send)
+sendButton.pack(side=tk.LEFT)
+
+# Exit Button
+exitButton = tk.Button(userCanvas, text="Quit", command=clean_exit)
+exitButton.pack(side=tk.RIGHT)
+
 
 # Pack canvases
 userCanvas.pack()

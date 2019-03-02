@@ -22,7 +22,8 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 from discord.ext import commands
 import os
 
-# Save you bot token in a txt file in a folder ID. The folder should be in the CWD when the program runs.
+
+# Save your bot token in a txt file called "DISCORD_BOT_TOKEN" in a folder "ID". The folder should be in the CWD.
 # This allows code portability, and you can disable version control of the token in .gitignore so it never uploads.
 token_path = os.path.normpath('ID/DISCORD_BOT_TOKEN.txt')  # Gets a path to DISCORD_BOT_TOKEN.txt in directory ID
 token = str.rstrip(open(token_path).read())  # Load Token from file, removing trailing whitespace

@@ -45,6 +45,8 @@ Code written by Peter Maar (alset333)
 https://github.com/alset333/OneBot-Niko'''
 bot = commands.Bot(command_prefix='?', description=description)
 
+# Note, the authors are matched to the bot even across servers.
+# You can start a conversation in one and continue in another. Only one Niko per person!
 assistants = {}  # A dictionary matching each "message.author" to their "assistant" as {author : assistant}
 contexts = {}  # A dictionary matching each "message.author" to their "context" as {author : context}
 

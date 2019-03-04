@@ -53,6 +53,7 @@ async def on_ready():
     print('Niko has logged in as')
     print(bot.user.name)
     print(bot.user.id)
+    print("Available Emojis:", bot.emojis)
     print('------')
 
 
@@ -107,20 +108,19 @@ async def on_message(message):
         assistants[message.author] = a  # And save it
         lines, contextVar = a.message('', contextVar)  # Then send the welcome trigger
 
-
     for line in lines:
         rt = line["response_type"]
 
         # Bot gave text, so show it
         if rt == "text":
             print("Send:", line['text'])
-            await message.channel.send(line['text'])
+            await reply(message, line['text'])
 
         # Bot 'typing' or waiting, so wait for a moment
         elif rt == "pause":
             if line['typing']:
                 print("Send:", 'User is typing...')
-                await message.channel.send('User is typing...')
+                await reply(message, 'User is typing...')
 
             # Sleep for typing duration (or just print it if debugging mode)
             seconds = line['time'] / 1000  # Convert from ms to s
@@ -132,7 +132,7 @@ async def on_message(message):
                 message.channel.send(line['title'])
             for o in line['options']:
                 print(o['label'], ": ", o['value']['input']['text'], sep="")
-                await message.channel.send(o['label'] + ": " + o['value']['input']['text'])
+                await reply(message, o['label'] + ": " + o['value']['input']['text'])
 
         # Short pause between anything, even if no 'typing'
         sleep(0.1)
@@ -143,16 +143,23 @@ async def on_message(message):
 
     print("Contexts:\n", contextVar, contexts)
 
+    # if message.content.startswith('!hello'):
+    #     await message.channel.send("test")
+    # content = 'confused cat noises'
+    # msg = '{0.mention}, {1}'.format(message.author, content)
+    # await message.channel.send(msg)
 
 
+async def reply(message, response):
 
+    # Replace any name-text emojis (looks like :niko:)
+    # with corresponding name-id text for discord (looks like <:niko:012345678901234567>)
+    # This assumes there are no duplicate names, or the replace could cause problems
+    for e in bot.emojis:  # look through all visible emojis (all servers the bot is in)
+        response = response.replace(":" + e.name + ":", "<:" + e.name + ":" + str(e.id) + ">")
 
-    if message.content.startswith('!hello'):
-        await message.channel.send("test")
-    content = 'confused cat noises'
-    msg = '{0.mention}, {1}'.format(message.author, content)
+    msg = '{0.mention}\n{1}'.format(message.author, response)
     await message.channel.send(msg)
-
 
 bot.run(token)
 

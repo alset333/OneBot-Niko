@@ -20,6 +20,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 """
 
 from discord.ext import commands
+from discord import Game, Status
 import os
 import WatsonAssistantV2Utility
 from time import sleep
@@ -55,6 +56,9 @@ async def on_ready():
     print(bot.user.id)
     print("Available Emojis:", bot.emojis)
     print('------')
+
+    game = Game("with friends!")
+    await bot.change_presence(status=Status.online, activity=game)
 
 
 @bot.command()

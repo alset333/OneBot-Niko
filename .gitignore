@@ -116,3 +116,4 @@ dmypy.json
 # Other
 .idea
 ID/*
+log.txt

@@ -24,6 +24,7 @@ from discord import Game, Status
 import os
 import WatsonAssistantV2Utility
 from time import sleep
+from Logger import log, close_log
 
 VERSION = '2019-01-05'
 
@@ -50,14 +51,13 @@ bot = commands.Bot(command_prefix='?', description=description)
 assistants = {}  # A dictionary matching each "message.author" to their "assistant" as {author : assistant}
 contexts = {}  # A dictionary matching each "message.author" to their "context" as {author : context}
 
-
 @bot.event
 async def on_ready():
-    print('Niko has logged in as')
-    print(bot.user.name)
-    print(bot.user.id)
-    print("Available Emojis:", bot.emojis)
-    print('------')
+    log('Niko has logged in as')
+    log(bot.user.name)
+    log(bot.user.id)
+    log("Available Emojis:", bot.emojis)
+    log('------', flush=True)
 
     game = Game("with friends!")
     await bot.change_presence(status=Status.online, activity=game)
@@ -95,18 +95,22 @@ async def logout(ctx):
 
 @bot.listen()
 async def on_message(message):
-    print(message)
+    log("Message:", message)
+    log("Message content:", message.content)
     if message.author.bot:  # If the bot sent the message
         return  # Don't do anything with it
 
+    if message.content[0] == bot.command_prefix:  # If the message is a command
+        return  # Don't do anything with it
+
     if message.author in contexts:  # If they have a context
-        print("they have a context")
+        log("they have a context")
         contextVar = contexts[message.author]  # Use their context
     else:
         contextVar = []  # Otherwise, use an empty one
 
     if message.author in assistants:  # If they already have an assistant
-        print("they have an assistant")
+        log("they have an assistant")
         a = assistants[message.author]  # Use their assistant
         lines, contextVar = a.message(message.content, contextVar)  # And send their message
     else:  # If they don't have an assistant yet
@@ -119,13 +123,13 @@ async def on_message(message):
 
         # Bot gave text, so show it
         if rt == "text":
-            print("Send:", line['text'])
+            log("Send:", line['text'])
             await reply(message, line['text'])
 
         # Bot 'typing' or waiting, so wait for a moment
         elif rt == "pause":
             if line['typing']:
-                print("Send:", 'User is typing...')
+                log("Send:", 'User is typing...')
                 await reply(message, 'User is typing...')
 
             # Sleep for typing duration (or just print it if debugging mode)
@@ -133,21 +137,21 @@ async def on_message(message):
             sleep(seconds)
 
         elif rt == "option":
-            print(line['title'])
+            log(line['title'])
             if line['title']:  # Can't send empty lines, often have empty title for questions
                 message.channel.send(line['title'])
             for o in line['options']:
-                print(o['label'], ": ", o['value']['input']['text'], sep="")
+                log(o['label'], ": ", o['value']['input']['text'], sep="")
                 await reply(message, o['label'] + ": " + o['value']['input']['text'])
 
         # Short pause between anything, even if no 'typing'
         sleep(0.1)
 
-        print()  # Newline
+        log()  # Newline
 
     contexts[message.author] = contextVar  # Save their new context
 
-    print("Contexts:\n", contextVar, contexts)
+    log("Contexts:\n", contextVar, contexts)
 
     # if message.content.startswith('!hello'):
     #     await message.channel.send("test")
@@ -164,10 +168,15 @@ async def reply(message, response):
     for e in bot.emojis:  # look through all visible emojis (all servers the bot is in)
         response = response.replace(":" + e.name + ":", "<:" + e.name + ":" + str(e.id) + ">")
 
-    msg = '{0.mention}\n{1}'.format(message.author, response)
+    if message.guild is None:  # DMs, just respond
+        msg = response
+    else:  # Servers, be sure to mention them
+        msg = '{0.mention}\n{1}'.format(message.author, response)
     await message.channel.send(msg)
 
 bot.run(token)
 
 for a in assistants:
     a.disconnect()
+
+close_log()

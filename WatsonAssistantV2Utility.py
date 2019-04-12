@@ -20,7 +20,9 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 """
 
 from watson_developer_cloud import AssistantV2, assistant_v2
+from watson_developer_cloud.watson_service import  WatsonApiException
 from time import sleep
+from Logger import log
 
 DEBUG = True
 
@@ -33,7 +35,7 @@ url_location = url_locations[LOCATION_NUMBER]
 
 def timed_print(text):
     for char in text:
-        print(char, end='')
+        log(char, end='')
         if not DEBUG:
             sleep(0.01)
 
@@ -51,35 +53,47 @@ def display_response(response_lines):
         # Bot 'typing' or waiting, so wait for a moment
         elif rt == "pause":
             if line['typing']:
-                print('User is typing...')
+                log('User is typing...')
 
             # Sleep for typing duration (or just print it if debugging mode)
             seconds = line['time'] / 1000  # Convert from ms to s
             if DEBUG:
-                print(seconds, "second sleep")
+                log(seconds, "second sleep")
             else:
                 sleep(seconds)
 
         elif rt == "option":
-            print(line['title'])
+            log(line['title'])
             for o in line['options']:
-                print(o['label'], ": ", o['value']['input']['text'], sep="")
+                log(o['label'], ": ", o['value']['input']['text'], sep="")
 
         # Short pause between anything, even if no 'typing' (unless debugging mode)
         if not DEBUG:
             sleep(0.1)
 
-        print()  # Newline
+        log()  # Newline
 
 
 class WatsonAssistant:
     def __init__(self, version, api_key, assistant_id):
+        self.version = version
+        self.api_key = api_key
         self.assistant_id = assistant_id
+
+        self.assistant = None
+        self.session_id = None
+
+        self.connect()
+
+    def connect(self):
+        """
+        Start the session
+        """
 
         # Create assistant object
         self.assistant = AssistantV2(
-            version=version,
-            iam_apikey=api_key,
+            version=self.version,
+            iam_apikey=self.api_key,
             url='https://gateway' + url_location + '.watsonplatform.net/assistant/api'
         )
 
@@ -93,7 +107,7 @@ class WatsonAssistant:
         End the session
         """
         self.assistant.delete_session(self.assistant_id, self.session_id)
-        print("Disconnected")
+        log("Disconnected")
 
     def message(self, text, context):
         """
@@ -112,12 +126,20 @@ class WatsonAssistant:
         opt = assistant_v2.MessageInputOptions(return_context=True)
         message_input = assistant_v2.MessageInput(text=text, options=opt)
 
-        response = self.assistant.message(
-            assistant_id=self.assistant_id,
-            session_id=self.session_id,
-            input=message_input,
-            context=context
-        ).get_result()
+        response = None
+
+        try:
+            response = self.assistant.message(
+                assistant_id=self.assistant_id,
+                session_id=self.session_id,
+                input=message_input,
+                context=context
+            ).get_result()
+        except WatsonApiException:
+            log("Exception occurred sending message, probably timed out. Reconnecting...")
+            self.connect()
+            log("Trying again...")
+            return self.message(text, context)
 
         # Get just the array of the different lines (text, pause, etc)
         lines = response["output"]["generic"]
@@ -126,8 +148,8 @@ class WatsonAssistant:
         context = response['context']
 
         if DEBUG:
-            print("------------------")
-            print(response)
-            print("------------------")
+            log("------------------")
+            log(response)
+            log("------------------")
 
         return lines, context

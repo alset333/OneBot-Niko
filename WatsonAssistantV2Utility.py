@@ -126,8 +126,6 @@ class WatsonAssistant:
         opt = assistant_v2.MessageInputOptions(return_context=True)
         message_input = assistant_v2.MessageInput(text=text, options=opt)
 
-        response = None
-
         try:
             response = self.assistant.message(
                 assistant_id=self.assistant_id,
@@ -136,7 +134,7 @@ class WatsonAssistant:
                 context=context
             ).get_result()
         except WatsonApiException:
-            log("Exception occurred sending message, probably timed out. Reconnecting...")
+            log("Exception occurred sending message to assistant, probably timed out. Reconnecting...")
             self.connect()
             log("Trying again...")
             return self.message(text, context)

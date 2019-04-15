@@ -22,10 +22,13 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 from time import time
 
 logfile_location = 'log.txt'
-logfile = open(logfile_location, 'a')
+logfile = open(logfile_location, 'a', encoding='utf-8')  # Open for appending.
+# UTF-8 helps with some special characters that happen sometimes (like the "No Category:" line of the output of ?help)
 
 # To use, just add this import:
 # "from Logger import log"
+
+logfile_closed = False
 
 
 def log(*args, sep=' ', end='\n', flush=False):
@@ -51,11 +54,17 @@ def log(*args, sep=' ', end='\n', flush=False):
     output_string += end
 
     print(output_string, end='')
-    logfile.write(output_string)
+    if not logfile_closed:
+        logfile.write(output_string)
+    else:
+        print("Error:\tOops! You tried to log with the logfile closed!")
 
     if flush:
         logfile.flush()
 
 
 def close_log():
+    global logfile_closed
+
     logfile.close()
+    logfile_closed = True

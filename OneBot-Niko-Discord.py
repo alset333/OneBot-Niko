@@ -25,15 +25,17 @@ import os
 import WatsonAssistantV2Utility
 from time import sleep
 from Logger import log, close_log
+import json
 
 VERSION = '2019-01-05'
 
+# Watson keys
 api_path = os.path.normpath('ID/API_KEY.txt')
 assistant_path = os.path.normpath('ID/ASSISTANT_ID.txt')
 API_KEY = str.rstrip(open(api_path).read())  # Load API Key from file, removing trailing whitespace
 ASSISTANT_ID = str.rstrip(open(assistant_path).read())  # Load Assistant ID from file, removing trailing whitespace
 
-
+# Discord keys
 token_path = os.path.normpath('ID/DISCORD_BOT_TOKEN.txt')
 token = str.rstrip(open(token_path).read())  # Load Token from file, removing trailing whitespace
 
@@ -50,6 +52,22 @@ bot = commands.Bot(command_prefix='?', description=description)
 # You can start a conversation in one and continue in another. Only one Niko per person!
 assistants = {}  # A dictionary matching each "message.author" to their "assistant" as {author : assistant}
 contexts = {}  # A dictionary matching each "message.author" to their "context" as {author : context}
+
+
+# Load save data
+save_file_path = os.path.normpath('save_data.json')
+if os.path.isfile(save_file_path):
+    save_file = open(save_file_path)  # Open the save file
+    save_file_contents = save_file.read()
+    if len(str.rstrip(save_file_contents)) != 0:
+        save_data = json.loads(save_file_contents)  # Read and decode the JSON from the file
+        print(save_data)
+
+        # Turn the keys back into ints from strings
+        for key in save_data:
+            contexts[int(key)] = save_data[key]
+
+
 
 @bot.event
 async def on_ready():
@@ -103,20 +121,26 @@ async def on_message(message):
     if message.content[0] == bot.command_prefix:  # If the message is a command
         return  # Don't do anything with it
 
-    if message.author in contexts:  # If they have a context
+    if message.author.id in contexts:  # If they have a context
         log("they have a context")
-        contextVar = contexts[message.author]  # Use their context
+        contextVar = contexts[message.author.id]  # Use their context
     else:
+        log(message.author.id, 'is not in', contexts)
         contextVar = []  # Otherwise, use an empty one
 
-    if message.author in assistants:  # If they already have an assistant
+    if message.author.id in assistants:  # If they already have an assistant
         log("they have an assistant")
-        a = assistants[message.author]  # Use their assistant
+        a = assistants[message.author.id]  # Use their assistant
         lines, contextVar = a.message(message.content, contextVar)  # And send their message
     else:  # If they don't have an assistant yet
         a = WatsonAssistantV2Utility.WatsonAssistant(VERSION, API_KEY, ASSISTANT_ID)  # Make one
-        assistants[message.author] = a  # And save it
-        lines, contextVar = a.message('', contextVar)  # Then send the welcome trigger
+        assistants[message.author.id] = a  # And save it
+
+        if contextVar == []:  # If their context is empty
+            lines, contextVar = a.message('', contextVar)  # Then send the welcome trigger
+        else:  # Otherwise
+            lines, contextVar = a.message(message.content, contextVar)  # send their message
+
 
     for line in lines:
         rt = line["response_type"]
@@ -149,7 +173,7 @@ async def on_message(message):
 
         log()  # Newline
 
-    contexts[message.author] = contextVar  # Save their new context
+    contexts[message.author.id] = contextVar  # Save their new context
 
     log("Contexts:\n", contextVar, contexts)
 
@@ -176,7 +200,19 @@ async def reply(message, response):
 
 bot.run(token)
 
-for a in assistants:
+for key in assistants:
+    a = assistants[key]
     a.disconnect()
+
+log("Contexts:", contexts)
+log("Assistants:", assistants)
+
+save_file = open(save_file_path, 'w')  # Open the save file for writing
+save_data = contexts  # Replace the save data
+save_file.write(json.dumps(save_data))  # Write the save data
+
+
+save_file.close()
+
 
 close_log()

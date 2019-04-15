@@ -117,3 +117,4 @@ dmypy.json
 .idea
 ID/*
 log.txt
+save_data.json

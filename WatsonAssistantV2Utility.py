@@ -109,7 +109,7 @@ class WatsonAssistant:
         self.assistant.delete_session(self.assistant_id, self.session_id)
         log("Disconnected")
 
-    def message(self, text, context):
+    def message(self, text, context, loopAgain=True):
         """
         Send a message from the user to the assistant, and get the response.
 
@@ -134,10 +134,11 @@ class WatsonAssistant:
                 context=context
             ).get_result()
         except WatsonApiException:
-            log("Exception occurred sending message to assistant, probably timed out. Reconnecting...")
-            self.connect()
-            log("Trying again...")
-            return self.message(text, context)
+            if loopAgain:
+                log("Exception occurred sending message to assistant, probably timed out. Reconnecting...")
+                self.connect()
+                log("Trying again...")
+                return self.message(text, context, loopAgain=False)
 
         # Get just the array of the different lines (text, pause, etc)
         lines = response["output"]["generic"]

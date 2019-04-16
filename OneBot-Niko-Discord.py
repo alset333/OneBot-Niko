@@ -56,17 +56,26 @@ contexts = {}  # A dictionary matching each "message.author" to their "context" 
 
 # Load save data
 save_file_path = os.path.normpath('save_data.json')
-if os.path.isfile(save_file_path):
-    save_file = open(save_file_path)  # Open the save file
-    save_file_contents = save_file.read()
+save_file = open(save_file_path, 'r+')  # Open the save file for writing
+
+
+def load_context():
+    save_file_contents = save_file.read()  # Read the contents
+
     if len(str.rstrip(save_file_contents)) != 0:
         save_data = json.loads(save_file_contents)  # Read and decode the JSON from the file
         print(save_data)
 
         # Turn the keys back into ints from strings
-        for key in save_data:
-            contexts[int(key)] = save_data[key]
+        for save_data_key in save_data:
+            contexts[int(save_data_key)] = save_data[save_data_key]
 
+
+def save_context():
+    save_data = contexts  # Replace the save data
+    save_file.seek(0)
+    save_file.write(json.dumps(save_data))  # Write the save data
+    save_file.truncate()
 
 
 @bot.event
@@ -111,6 +120,11 @@ async def logout(ctx):
     await bot.logout()
 
 
+@bot.command()
+async def save():
+    await save_context()
+
+
 @bot.listen()
 async def on_message(message):
     log("Message:", message)
@@ -140,7 +154,6 @@ async def on_message(message):
             lines, contextVar = a.message('', contextVar)  # Then send the welcome trigger
         else:  # Otherwise
             lines, contextVar = a.message(message.content, contextVar)  # send their message
-
 
     for line in lines:
         rt = line["response_type"]
@@ -198,18 +211,17 @@ async def reply(message, response):
         msg = '{0.mention}\n{1}'.format(message.author, response)
     await message.channel.send(msg)
 
+load_context()
 bot.run(token)
 
-for key in assistants:
-    a = assistants[key]
+for assistant_key in assistants:
+    a = assistants[assistant_key]
     a.disconnect()
 
 log("Contexts:", contexts)
 log("Assistants:", assistants)
 
-save_file = open(save_file_path, 'w')  # Open the save file for writing
-save_data = contexts  # Replace the save data
-save_file.write(json.dumps(save_data))  # Write the save data
+save_context()
 
 
 save_file.close()

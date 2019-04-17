@@ -121,7 +121,7 @@ async def logout(ctx):
 
 
 @bot.command()
-async def save():
+async def save(ctx):
     await save_context()
 
 

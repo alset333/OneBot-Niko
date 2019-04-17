@@ -72,10 +72,12 @@ def load_context():
 
 
 def save_context():
+    log("Saving...")
     save_data = contexts  # Replace the save data
     save_file.seek(0)
     save_file.write(json.dumps(save_data))  # Write the save data
     save_file.truncate()
+    log("Saved!")
 
 
 @bot.event
@@ -122,7 +124,7 @@ async def logout(ctx):
 
 @bot.command()
 async def save(ctx):
-    await save_context()
+    save_context()
 
 
 @bot.listen()

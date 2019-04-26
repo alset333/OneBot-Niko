@@ -118,6 +118,8 @@ class WatsonAssistant:
         :return: The assistant's response and the context
         """
 
+        text = text.replace('\t', ' ').replace('\n', ' ').replace('\r', ' ')
+
         if text.lower() == 'exit':
             self.disconnect()
             return
@@ -139,6 +141,8 @@ class WatsonAssistant:
                 self.connect()
                 log("Trying again...")
                 return self.message(text, context, loopAgain=False)
+            else:
+                return "", context
 
         # Get just the array of the different lines (text, pause, etc)
         lines = response["output"]["generic"]

@@ -119,6 +119,8 @@ async def ping(ctx):
 @bot.command()
 async def logout(ctx):
     """Since PyCharm doesn't send/wait for Ctrl+C, use this to gracefully disconnect"""
+    await ctx.send("Logging out")
+    save_context()
     await bot.logout()
 
 
@@ -223,10 +225,13 @@ for assistant_key in assistants:
 log("Contexts:", contexts)
 log("Assistants:", assistants)
 
+print("Saving on exit...")
 save_context()
-
+print("Saved!")
 
 save_file.close()
 
 
 close_log()
+
+print("Done.")

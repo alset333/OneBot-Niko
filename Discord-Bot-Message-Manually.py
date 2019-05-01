@@ -59,11 +59,19 @@ async def on_ready():
                 if message_to_send == "exit":
                     break
 
+                # Change @username to a mention
                 for user in bot.get_all_members():
                     message_to_send = message_to_send.replace("@" + user.name, user.mention)
 
+                    # Change @nickname to a mention
                     if user.nick:
                         message_to_send = message_to_send.replace("@" + user.nick, user.mention)
+
+                # Replace any name-text emojis (looks like :niko:)
+                # with corresponding name-id text for discord (looks like <:niko:012345678901234567>)
+                # This assumes there are no duplicate names, or the replace could cause problems
+                for e in bot.emojis:  # look through all visible emojis (all servers the bot is in)
+                    message_to_send = message_to_send.replace(":" + e.name + ":", "<:" + e.name + ":" + str(e.id) + ">")
 
                 await c.send(message_to_send)
 

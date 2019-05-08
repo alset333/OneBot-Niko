@@ -161,6 +161,29 @@ The program's source can be found at https://github.com/alset333/OneBot-Niko
     """)
 
 
+@bot.command()
+@commands.has_permissions(administrator=True)
+async def update(ctx):
+    # Get information about the command
+    message = ctx.message
+    author = message.author
+
+    # Delete the command
+    await message.delete()
+
+    # Write the response
+    response = "Updating at the request of "\
+               + str(author.mention) + " '" + str(author.nick) + "' " + str(author) + " (" + str(author.id) + ")..."
+
+    # Print the response, and send the response
+    print(response)
+    await ctx.send(response)
+
+    os.system("git fetch && git pull")
+
+    print("Check now?")
+
+
 @bot.listen()
 async def on_message(message):
     log("Message:", message)

@@ -40,12 +40,18 @@ token_path = os.path.normpath('ID/DISCORD_BOT_TOKEN.txt')
 token = str.rstrip(open(token_path).read())  # Load Token from file, removing trailing whitespace
 
 
-description = '''Incredible bot using techniques from The World Machine to connect you to your Niko.
+description = """
+OneBot-Niko  Copyright (C) 2019  Peter Maar
+This program comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to
+redistribute it under certain conditions.
+Type '?about' for more details.
+------------------------------------------------
+
+Incredible bot using techniques from The World Machine to connect you to your Niko.
 Coded from the ground up with simplified AI to avoid Squares.
 It does not run a world simulation, and communication is not always stable, but it's a start.
-
-Code written by Peter Maar (alset333)
-https://github.com/alset333/OneBot-Niko'''
+"""
 bot = commands.Bot(command_prefix='?', description=description)
 
 # Note, the authors are matched to the bot even across servers.
@@ -127,6 +133,32 @@ async def logout(ctx):
 @bot.command()
 async def save(ctx):
     save_context()
+
+
+@bot.command()
+async def about(ctx):
+    """More information about the program."""
+    await ctx.send("""    
+```
+Copyright (C) 2019  Peter Maar
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+Contact Peter Maar via email to petermaar@protonmail.com
+The program's source can be found at https://github.com/alset333/OneBot-Niko
+```
+    """)
 
 
 @bot.listen()

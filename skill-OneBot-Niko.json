@@ -1,0 +1,4469 @@
+{
+  "name": "OneBot-Niko",
+  "intents": [
+    {
+      "intent": "Bot_Control_Clarification",
+      "examples": [
+        {
+          "text": "What do you mean?"
+        },
+        {
+          "text": "Can you say that again please?"
+        },
+        {
+          "text": "Come again?"
+        },
+        {
+          "text": "Explains"
+        },
+        {
+          "text": "I did not quite understand what you gave me"
+        },
+        {
+          "text": "I didn't catch that"
+        },
+        {
+          "text": "I didn't quite understand what you said"
+        },
+        {
+          "text": "I didn't understand that properly"
+        },
+        {
+          "text": "I don't get it"
+        },
+        {
+          "text": "I don't understand what you're saying"
+        },
+        {
+          "text": "I don't understand"
+        },
+        {
+          "text": "I need more information"
+        },
+        {
+          "text": "Let's try to say that again more clearly, shall we?"
+        },
+        {
+          "text": "What are you referring to?"
+        },
+        {
+          "text": "What are you saying?"
+        },
+        {
+          "text": "What are you talking about?"
+        },
+        {
+          "text": "What do you mean by that?"
+        }
+      ],
+      "description": "Repeat or clarify last statement."
+    },
+    {
+      "intent": "user_talking_about_self",
+      "examples": [
+        {
+          "text": "I am well"
+        },
+        {
+          "text": "what is my name"
+        },
+        {
+          "text": "who am I?"
+        },
+        {
+          "text": "I am good"
+        },
+        {
+          "text": "Am I a cat?"
+        },
+        {
+          "text": "am I the cat?"
+        },
+        {
+          "text": "am I cat"
+        },
+        {
+          "text": "am i okay"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "apology",
+      "examples": [
+        {
+          "text": "please forgive me"
+        },
+        {
+          "text": "I'm sorry"
+        },
+        {
+          "text": "sorry"
+        },
+        {
+          "text": "my bad"
+        },
+        {
+          "text": "sorry about that"
+        },
+        {
+          "text": "apologies"
+        },
+        {
+          "text": "my apologies"
+        }
+      ]
+    },
+    {
+      "intent": "Ask_Niko_Facts",
+      "examples": [
+        {
+          "text": "when were you born"
+        },
+        {
+          "text": "how tall are you"
+        },
+        {
+          "text": "are you nonbinary"
+        },
+        {
+          "text": "are you a cat or person"
+        },
+        {
+          "text": "whats your name"
+        },
+        {
+          "text": "how old are you"
+        },
+        {
+          "text": "What is your name?"
+        },
+        {
+          "text": "what is your name"
+        },
+        {
+          "text": "what gender are you"
+        },
+        {
+          "text": "are you a girl"
+        },
+        {
+          "text": "are you a boy"
+        },
+        {
+          "text": "what animal are you"
+        },
+        {
+          "text": "are you a cat"
+        },
+        {
+          "text": "are you a person or a cat"
+        },
+        {
+          "text": "Do you like birds?"
+        },
+        {
+          "text": "who are you"
+        },
+        {
+          "text": "what sex are you"
+        },
+        {
+          "text": "remember mama?"
+        },
+        {
+          "text": "Niko is a cat’s"
+        },
+        {
+          "text": "Where do you live?"
+        },
+        {
+          "text": "Do you remember me?"
+        }
+      ],
+      "description": "Facts and attributes about Niko"
+    },
+    {
+      "intent": "express_love",
+      "examples": [
+        {
+          "text": "I love you"
+        },
+        {
+          "text": "I love them"
+        },
+        {
+          "text": "I love that"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "hug",
+      "examples": [
+        {
+          "text": "hug"
+        },
+        {
+          "text": "*Cuddle*"
+        },
+        {
+          "text": "I want to hug"
+        },
+        {
+          "text": "hug pls"
+        },
+        {
+          "text": "can I have a hug?"
+        },
+        {
+          "text": "*gives you a hug*"
+        },
+        {
+          "text": "*hugs you*"
+        },
+        {
+          "text": "hugs you"
+        },
+        {
+          "text": "_hugs_"
+        },
+        {
+          "text": "*hug*"
+        }
+      ],
+      "description": "Player hugs Niko, or wants a hug"
+    },
+    {
+      "intent": "Bot_Control_Unsure",
+      "examples": [
+        {
+          "text": "To be honest, I m really not sure"
+        },
+        {
+          "text": "You got me"
+        },
+        {
+          "text": "maybe"
+        },
+        {
+          "text": "No idea"
+        },
+        {
+          "text": "No clue"
+        },
+        {
+          "text": "I m not yet convinced"
+        },
+        {
+          "text": "I m not sure what will make you happy"
+        },
+        {
+          "text": "I m not certain I get what you re saying"
+        },
+        {
+          "text": "I don t know what you need"
+        },
+        {
+          "text": "I don t know what you want"
+        },
+        {
+          "text": "I have no idea, actually"
+        },
+        {
+          "text": "I have no idea what you are looking for"
+        },
+        {
+          "text": "I haven't got a clue"
+        }
+      ],
+      "description": "Indicate no definite answer to a question."
+    },
+    {
+      "intent": "missed_you",
+      "examples": [
+        {
+          "text": "I missed you"
+        },
+        {
+          "text": "awww I missed you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Bot_Control_Approve_Response",
+      "examples": [
+        {
+          "text": "All right"
+        },
+        {
+          "text": "Got it"
+        },
+        {
+          "text": "For sure!"
+        },
+        {
+          "text": "Correct"
+        },
+        {
+          "text": "Affirmative. That's what I'm looking for."
+        },
+        {
+          "text": "You read my mind"
+        },
+        {
+          "text": "Yes"
+        },
+        {
+          "text": "mhm"
+        },
+        {
+          "text": "Continue"
+        },
+        {
+          "text": "Yeah, that's it!"
+        },
+        {
+          "text": "Very well. Let's do it."
+        },
+        {
+          "text": "This is alright"
+        },
+        {
+          "text": "That's exactly what I want"
+        },
+        {
+          "text": "That is what I need"
+        },
+        {
+          "text": "That is the proper response."
+        },
+        {
+          "text": "That is right"
+        },
+        {
+          "text": "That is precisely what I was looking for"
+        },
+        {
+          "text": "Sweet"
+        },
+        {
+          "text": "Sure thing!"
+        },
+        {
+          "text": "Indeed!"
+        },
+        {
+          "text": "I like that"
+        },
+        {
+          "text": "I agree"
+        },
+        {
+          "text": "Great"
+        }
+      ],
+      "description": "Acknowledge that the response satisfies a question."
+    },
+    {
+      "intent": "General_Negative_Feedback",
+      "examples": [
+        {
+          "text": "You are having delusions"
+        },
+        {
+          "text": "I hate this!"
+        },
+        {
+          "text": "I hate you"
+        },
+        {
+          "text": "Why are you stupid?"
+        },
+        {
+          "text": "Why are you so annoying?"
+        },
+        {
+          "text": "Stupid"
+        },
+        {
+          "text": "Robots are stupid"
+        },
+        {
+          "text": "You are on my nerves"
+        },
+        {
+          "text": "Robots are boring"
+        },
+        {
+          "text": "You do not seem smart"
+        },
+        {
+          "text": "You're really frustrating"
+        },
+        {
+          "text": "You're really irritating"
+        },
+        {
+          "text": "You're too stupid"
+        },
+        {
+          "text": "You are very frustrating"
+        },
+        {
+          "text": "Do not like you?"
+        },
+        {
+          "text": "Everyone hates you"
+        },
+        {
+          "text": "Hate you"
+        },
+        {
+          "text": "I do not like you"
+        },
+        {
+          "text": "dye"
+        },
+        {
+          "text": "ree"
+        },
+        {
+          "text": "It is annoying"
+        },
+        {
+          "text": "Quit annoying me"
+        }
+      ],
+      "description": "Express unfavorable feedback."
+    },
+    {
+      "intent": "mocking",
+      "examples": [
+        {
+          "text": "Bwhahaha"
+        },
+        {
+          "text": "HAHAHAHAHAHAHAHAHA"
+        },
+        {
+          "text": "HAHAHAHAHAHAHAHAHAHAHA"
+        }
+      ],
+      "description": "Mocking or laughing at the bot"
+    },
+    {
+      "intent": "reassurance",
+      "examples": [
+        {
+          "text": "That's good"
+        },
+        {
+          "text": "You'll be okay"
+        },
+        {
+          "text": "It will be okay"
+        },
+        {
+          "text": "Aww, that's okay"
+        }
+      ],
+      "description": "Player reassuring Niko"
+    },
+    {
+      "intent": "Bot_Control_Change_Subject",
+      "examples": [
+        {
+          "text": "A different matter"
+        },
+        {
+          "text": "Another thing"
+        },
+        {
+          "text": "Can we talk about something else?"
+        },
+        {
+          "text": "Change topic"
+        },
+        {
+          "text": "Chat about something else"
+        },
+        {
+          "text": "Discuss something else"
+        },
+        {
+          "text": "Help me with this other question"
+        },
+        {
+          "text": "Here is another issue"
+        },
+        {
+          "text": "I have one more question"
+        },
+        {
+          "text": "Let us change the topic"
+        },
+        {
+          "text": "Let us talk about something else"
+        },
+        {
+          "text": "Talk about something else"
+        }
+      ],
+      "description": "Change to a different topic."
+    },
+    {
+      "intent": "Bot_Control_Start_Over",
+      "examples": [
+        {
+          "text": "Back to the beginning"
+        },
+        {
+          "text": "Actually, let's start over"
+        },
+        {
+          "text": "Back to the top"
+        },
+        {
+          "text": "Begin over!"
+        },
+        {
+          "text": "Can we please start over?"
+        },
+        {
+          "text": "How can I start over?"
+        },
+        {
+          "text": "I need to reset."
+        },
+        {
+          "text": "I want start from the beginning"
+        },
+        {
+          "text": "I would like to start all over"
+        },
+        {
+          "text": "Let us reopen this again."
+        },
+        {
+          "text": "Let's go back to square one"
+        },
+        {
+          "text": "Let's pick this up from the top again."
+        },
+        {
+          "text": "One more time from the beginning"
+        },
+        {
+          "text": "Please initiate from the beginning"
+        },
+        {
+          "text": "Please reset"
+        },
+        {
+          "text": "Please start a new chat"
+        },
+        {
+          "text": "Restart"
+        },
+        {
+          "text": "Start over"
+        },
+        {
+          "text": "We need a do-over"
+        },
+        {
+          "text": "We will need to begin again"
+        }
+      ],
+      "description": "Restart bot or current flow."
+    },
+    {
+      "intent": "Bot_Control_Confirm_Presence",
+      "examples": [
+        {
+          "text": "Did you hear what I said?"
+        },
+        {
+          "text": "Have I lost you?"
+        },
+        {
+          "text": "I am still holding"
+        },
+        {
+          "text": "Is anybody here?"
+        },
+        {
+          "text": "Is anybody home?"
+        },
+        {
+          "text": "Speak to me if you are there."
+        },
+        {
+          "text": "Where'd you go?"
+        },
+        {
+          "text": "You around?"
+        },
+        {
+          "text": "Are you leaving me?"
+        },
+        {
+          "text": "Are you on?"
+        },
+        {
+          "text": "Are you still around?"
+        },
+        {
+          "text": "Are you still here with me?"
+        },
+        {
+          "text": "Are you there?"
+        },
+        {
+          "text": "Am I talking to someone?"
+        },
+        {
+          "text": "Anyone there?"
+        },
+        {
+          "text": "Did you go somewhere?"
+        }
+      ],
+      "description": "Ask the bot to indicate that it is available."
+    },
+    {
+      "intent": "Name_Change",
+      "examples": [
+        {
+          "text": "I need to change my name"
+        },
+        {
+          "text": "change my name please"
+        },
+        {
+          "text": "I want to change names"
+        },
+        {
+          "text": "change name"
+        }
+      ]
+    },
+    {
+      "intent": "playful",
+      "examples": [],
+      "description": ""
+    },
+    {
+      "intent": "Bot_Control_Reject_Response",
+      "examples": [
+        {
+          "text": "I disagree"
+        },
+        {
+          "text": "Bad response"
+        },
+        {
+          "text": "That sounds like the wrong response"
+        },
+        {
+          "text": "That is not true"
+        },
+        {
+          "text": "That answer is incorrect"
+        },
+        {
+          "text": "Not the right response"
+        },
+        {
+          "text": "No"
+        },
+        {
+          "text": "No I'm fine thanks"
+        },
+        {
+          "text": "It is not what I was looking for"
+        },
+        {
+          "text": "You're misunderstanding me"
+        },
+        {
+          "text": "You didn't understand me"
+        },
+        {
+          "text": "You did not understand what I said"
+        },
+        {
+          "text": "That was not my intent"
+        },
+        {
+          "text": "That was wrong, try again"
+        },
+        {
+          "text": "Wrong response"
+        },
+        {
+          "text": "It is not what I want"
+        },
+        {
+          "text": "You did not understand what I asked"
+        },
+        {
+          "text": "I wasn't looking for that"
+        },
+        {
+          "text": "I don't want that"
+        },
+        {
+          "text": "I don't need that"
+        },
+        {
+          "text": "I do not think it is the answer?"
+        }
+      ],
+      "description": "Indicate the bot's response does not address a question."
+    },
+    {
+      "intent": "Bot_Control_Standby",
+      "examples": [
+        {
+          "text": "Keep holding"
+        },
+        {
+          "text": "Can you wait for me?"
+        },
+        {
+          "text": "Give me a few minutes to get together"
+        },
+        {
+          "text": "Give me a moment"
+        },
+        {
+          "text": "Give me a second"
+        },
+        {
+          "text": "Hold on"
+        },
+        {
+          "text": "I want stop a moment"
+        },
+        {
+          "text": "I will be back"
+        },
+        {
+          "text": "I would like to put you on hold"
+        },
+        {
+          "text": "In a moment"
+        },
+        {
+          "text": "Just a sec"
+        },
+        {
+          "text": "Just hold on"
+        },
+        {
+          "text": "Let me see"
+        },
+        {
+          "text": "Need a minute here"
+        },
+        {
+          "text": "Out for a break"
+        },
+        {
+          "text": "Wait"
+        },
+        {
+          "text": "Back again soon"
+        },
+        {
+          "text": "Be back later"
+        },
+        {
+          "text": "Be patient with me"
+        },
+        {
+          "text": "Can you give me a moment?"
+        }
+      ],
+      "description": "Indicate a delay in providing input to the bot."
+    },
+    {
+      "intent": "General_Greetings",
+      "examples": [
+        {
+          "text": "What's new?"
+        },
+        {
+          "text": "Looking good eve"
+        },
+        {
+          "text": "How r u?"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hey how are you doing"
+        },
+        {
+          "text": "Hey there all"
+        },
+        {
+          "text": "Hey there"
+        },
+        {
+          "text": "Hey twin"
+        },
+        {
+          "text": "Hey you"
+        },
+        {
+          "text": "Hi advisor"
+        },
+        {
+          "text": "Hi there"
+        },
+        {
+          "text": "How are things going?"
+        },
+        {
+          "text": "How are you today?"
+        },
+        {
+          "text": "How is it going?"
+        },
+        {
+          "text": "Good to see you"
+        },
+        {
+          "text": "Good evening"
+        },
+        {
+          "text": "Good day"
+        },
+        {
+          "text": "Who is this?"
+        },
+        {
+          "text": "What's up?"
+        },
+        {
+          "text": "Hello I am looking for some help here"
+        },
+        {
+          "text": "Hello Agent"
+        },
+        {
+          "text": "Have you been well?"
+        },
+        {
+          "text": "Ok take me back"
+        },
+        {
+          "text": "Greetings"
+        },
+        {
+          "text": "You there"
+        }
+      ],
+      "description": "Greet the bot."
+    },
+    {
+      "intent": "Ask_Niko_Opinion",
+      "examples": [
+        {
+          "text": "Niko, what do you think about the new rudeness system?"
+        },
+        {
+          "text": "what do you think about"
+        },
+        {
+          "text": "what do you think"
+        },
+        {
+          "text": "who do you think should be in charge?"
+        },
+        {
+          "text": "Niko, what do you think about the new rudeness system"
+        },
+        {
+          "text": "what do you say to that?"
+        }
+      ],
+      "description": "What do you think about __? How do you feel about ___?"
+    },
+    {
+      "intent": "goodnight",
+      "examples": [
+        {
+          "text": "Good night, Niko"
+        },
+        {
+          "text": "goodnight"
+        },
+        {
+          "text": "sleep well"
+        },
+        {
+          "text": "sweet dreams"
+        },
+        {
+          "text": "gn"
+        },
+        {
+          "text": "nighty night"
+        },
+        {
+          "text": "night night"
+        },
+        {
+          "text": "get some rest"
+        },
+        {
+          "text": "time for bed"
+        },
+        {
+          "text": "it's bedtime"
+        },
+        {
+          "text": "I'm going to sleep, goodnight"
+        }
+      ]
+    },
+    {
+      "intent": "Ask_Niko_Feeling",
+      "examples": [
+        {
+          "text": "Did you miss your mama?"
+        },
+        {
+          "text": "slept well?"
+        },
+        {
+          "text": "How are you?"
+        },
+        {
+          "text": "How have you been?"
+        },
+        {
+          "text": "Did you sleep well last night?"
+        }
+      ],
+      "description": "User asks Niko how do you feel, how are you, etc"
+    },
+    {
+      "intent": "aww",
+      "examples": [
+        {
+          "text": "awwww"
+        },
+        {
+          "text": "aw"
+        },
+        {
+          "text": "aawwww"
+        },
+        {
+          "text": "aww"
+        },
+        {
+          "text": "awww"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "General_Ending",
+      "examples": [
+        {
+          "text": "Bye bye"
+        },
+        {
+          "text": "Thanks, bye!"
+        },
+        {
+          "text": "Im done"
+        },
+        {
+          "text": "Im good thank you"
+        },
+        {
+          "text": "Hey bot go away"
+        },
+        {
+          "text": "I'm leaving now"
+        },
+        {
+          "text": "It was nice chatting with you"
+        },
+        {
+          "text": "Ok goodbye"
+        },
+        {
+          "text": "See you later"
+        },
+        {
+          "text": "I am leaving"
+        },
+        {
+          "text": "I am out of here"
+        },
+        {
+          "text": "I d like to stop doing this"
+        },
+        {
+          "text": "I have got to go"
+        },
+        {
+          "text": "I want to quit"
+        },
+        {
+          "text": "Time to go"
+        },
+        {
+          "text": "That's everything"
+        },
+        {
+          "text": "That is all"
+        },
+        {
+          "text": "See you"
+        },
+        {
+          "text": "Shut up"
+        },
+        {
+          "text": "Thanks very much, bye!"
+        },
+        {
+          "text": "Good. bye."
+        },
+        {
+          "text": "Go off"
+        },
+        {
+          "text": "Go away"
+        },
+        {
+          "text": "Get lost"
+        },
+        {
+          "text": "Finished now, good bye"
+        },
+        {
+          "text": "Ending this session"
+        },
+        {
+          "text": "End trial"
+        },
+        {
+          "text": "Cya later"
+        },
+        {
+          "text": "Catch you later"
+        },
+        {
+          "text": "Bye now"
+        },
+        {
+          "text": "Goodbye"
+        },
+        {
+          "text": "Going now"
+        },
+        {
+          "text": "I'm done"
+        },
+        {
+          "text": "Stop doing this"
+        },
+        {
+          "text": "Stop talking to me"
+        },
+        {
+          "text": "Thank you for your time"
+        },
+        {
+          "text": "Have a nice day?"
+        }
+      ],
+      "description": "End the conversation."
+    },
+    {
+      "intent": "threaten",
+      "examples": [
+        {
+          "text": "shoot"
+        },
+        {
+          "text": "I'll hurt you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "General_Human_or_Bot",
+      "examples": [
+        {
+          "text": "Am I chatting with a human?"
+        },
+        {
+          "text": "Is this a computer?"
+        },
+        {
+          "text": "How can you prove you are a human?"
+        },
+        {
+          "text": "Are you real?"
+        },
+        {
+          "text": "Are you human?"
+        },
+        {
+          "text": "Are you even real?"
+        },
+        {
+          "text": "Are you a robot?"
+        },
+        {
+          "text": "Am I talking to a person or am I talking to an AI?"
+        },
+        {
+          "text": "Am I talking to a Bot?"
+        },
+        {
+          "text": "Am I talking to Watson?"
+        },
+        {
+          "text": "Tell me, are you a human or no?"
+        },
+        {
+          "text": "Are you a human or a bot?"
+        }
+      ],
+      "description": "Ask if speaking to a human or a bot."
+    },
+    {
+      "intent": "Ask_World_Facts",
+      "examples": [
+        {
+          "text": "hi Geopolitical"
+        },
+        {
+          "text": "What do you think about Geopolitical"
+        },
+        {
+          "text": "Geopolitical"
+        },
+        {
+          "text": "What's in the sky"
+        }
+      ]
+    },
+    {
+      "intent": "hehe",
+      "examples": [
+        {
+          "text": "heh"
+        },
+        {
+          "text": "hehe"
+        },
+        {
+          "text": "😂"
+        },
+        {
+          "text": "haha"
+        },
+        {
+          "text": "lol"
+        }
+      ]
+    },
+    {
+      "intent": "General_Positive_Feedback",
+      "examples": [
+        {
+          "text": "This is so cool"
+        },
+        {
+          "text": "You are awesome"
+        },
+        {
+          "text": "You are great"
+        },
+        {
+          "text": "You are the best"
+        },
+        {
+          "text": "You are wonderful"
+        },
+        {
+          "text": "You gave me exactly what I need!"
+        },
+        {
+          "text": "You the man"
+        },
+        {
+          "text": "You're a genius!"
+        },
+        {
+          "text": "Thank you"
+        },
+        {
+          "text": "ty"
+        },
+        {
+          "text": "Niko is cute"
+        },
+        {
+          "text": "oh good"
+        },
+        {
+          "text": "neato"
+        },
+        {
+          "text": "Can't believe you are that good"
+        },
+        {
+          "text": "How cool is this?"
+        },
+        {
+          "text": "Brilliant!"
+        },
+        {
+          "text": "I like what you did there! :)"
+        },
+        {
+          "text": "I'm looking forward to working with you again! :)"
+        },
+        {
+          "text": "Love your work"
+        },
+        {
+          "text": "Ok thank you"
+        },
+        {
+          "text": "You've been so helpful :)"
+        },
+        {
+          "text": "This is good"
+        },
+        {
+          "text": "This is great"
+        }
+      ],
+      "description": "Express positive sentiment or gratitude."
+    },
+    {
+      "intent": "Bot_Control_Ignore_Undo",
+      "examples": [
+        {
+          "text": "Hold on! I think I want to do it differently."
+        },
+        {
+          "text": "It's not what I mean"
+        },
+        {
+          "text": "Ignore this"
+        },
+        {
+          "text": "Never"
+        },
+        {
+          "text": "Not yet"
+        },
+        {
+          "text": "Nothing"
+        },
+        {
+          "text": "Wait! Let's back up few steps and do that again"
+        },
+        {
+          "text": "I didn't mean to do that actually, let's go back"
+        },
+        {
+          "text": "I did not mean that?"
+        },
+        {
+          "text": "I change my mind."
+        },
+        {
+          "text": "Cancel"
+        },
+        {
+          "text": "Actually, I take that back"
+        },
+        {
+          "text": "Let us redo that again!"
+        },
+        {
+          "text": "Never mind"
+        }
+      ],
+      "description": "Ask the bot to take one step back."
+    },
+    {
+      "intent": "tampering",
+      "examples": [
+        {
+          "text": "{\"Poopy\"}"
+        },
+        {
+          "text": "; -- {} { } \" \" |\\ /"
+        },
+        {
+          "text": "{}"
+        },
+        {
+          "text": "--;"
+        },
+        {
+          "text": "Multi- line test"
+        }
+      ],
+      "description": "Messing with the bot stuff"
+    },
+    {
+      "intent": "good_morning",
+      "examples": [
+        {
+          "text": "G'morning!"
+        },
+        {
+          "text": "Good morning, Niko"
+        },
+        {
+          "text": "Morning!"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "good mornin"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Politics",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "communism",
+          "synonyms": [
+            "naziism",
+            "facism",
+            "idealogical",
+            "multiculturalist",
+            "poltical",
+            "facist",
+            "rascist",
+            "hypocracy",
+            "totalitarianism",
+            "propoganda",
+            "communism"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "geopolitical",
+          "synonyms": [
+            "Geopolitical",
+            "geopolitics",
+            "geostrategic",
+            "sociopolitical",
+            "civilizational",
+            "destabilizing",
+            "realpolitik",
+            "conjuncture",
+            "hegemonic",
+            "ideological",
+            "economic"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "User",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "name",
+          "synonyms": [
+            "my name"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "body_parts",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "ear",
+          "synonyms": [
+            "ears"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "foods",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "bacon",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "pancake",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Objects",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "sky",
+          "synonyms": []
+        }
+      ]
+    },
+    {
+      "entity": "silly",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "beep",
+          "synonyms": [
+            "BEEP"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "animals",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "sheep",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "cat",
+          "synonyms": [
+            "cats",
+            "kitten",
+            "kitty",
+            "feline",
+            "gato"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "actions",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "sleep",
+          "synonyms": [
+            "sleep",
+            "slept"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "lift",
+          "synonyms": [
+            "pick up",
+            "picks up",
+            "lifts up"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "hug",
+          "synonyms": [
+            "hugs"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "dab",
+          "synonyms": [
+            "dabs",
+            "dabbing"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "cuddle",
+          "synonyms": [
+            "cuddles"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "negative_and_positive",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "dangerous",
+          "synonyms": [
+            "gun",
+            "guns",
+            "firearms",
+            "pistol",
+            "rifle",
+            "handgun",
+            "weapons",
+            "shotguns",
+            "revolver",
+            "rifles",
+            "firearm",
+            "handguns",
+            "weapon",
+            "shotgun",
+            "pistols",
+            "revolvers",
+            "sidearm",
+            "ammunition",
+            "bomb",
+            "bombs",
+            "ammo",
+            "carbines",
+            "weaponry",
+            "muskets",
+            "glock",
+            "ammunitions",
+            "calibers",
+            "semiautomatic",
+            "munitions",
+            "centerfire",
+            "🔫"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "swears",
+          "synonyms": [
+            "effing",
+            "dayum",
+            "shitty",
+            "fuggin",
+            "effin",
+            "bugger",
+            "queers",
+            "arse",
+            "homos",
+            "dolts",
+            "dimwits",
+            "nutjobs",
+            "nitwits",
+            "fuckwits",
+            "wussies",
+            "libtards",
+            "dildo",
+            "goddamnit",
+            "shmuck",
+            "nigger",
+            "tards",
+            "retards",
+            "fatass",
+            "gtfo",
+            "libtard",
+            "goddammit",
+            "wanker",
+            "sexy",
+            "hussy",
+            "cretins",
+            "retarted",
+            "arseholes",
+            "homo",
+            "horny",
+            "skank",
+            "retarded",
+            "penis",
+            "stfu",
+            "bollocks",
+            "damnit",
+            "damned",
+            "slutty",
+            "fags",
+            "faggots",
+            "assclown",
+            "fucktards",
+            "sluts",
+            "asshats",
+            "douchebags",
+            "bullshit",
+            "dipshits",
+            "dickheads",
+            "dumbasses",
+            "asshat",
+            "shitbag",
+            "whores",
+            "jackass",
+            "wankers",
+            "scumbags",
+            "shitheads",
+            "jackasses",
+            "cocksuckers",
+            "twats",
+            "dicks",
+            "biatch",
+            "dumb",
+            "frakkin",
+            "pricks",
+            "asswipe",
+            "fucktard",
+            "cocks",
+            "bastards",
+            "pussies",
+            "goddam",
+            "twat",
+            "scumbag",
+            "shits",
+            "fag",
+            "bitches",
+            "cunts",
+            "fucken",
+            "motherfuckers",
+            "arsehole",
+            "motherfucking",
+            "douchebag",
+            "cocksucker",
+            "banged",
+            "assholes",
+            "faggot",
+            "fuckers",
+            "shithead",
+            "prick",
+            "asses",
+            "goddamned",
+            "dipshit",
+            "fucks",
+            "pussy",
+            "slut",
+            "friggin",
+            "bastard",
+            "dumbass",
+            "whore",
+            "dick",
+            "cunt",
+            "freaking",
+            "fucked",
+            "motherfucker",
+            "asshole",
+            "fucker",
+            "bitch",
+            "ass",
+            "dammit",
+            "hell",
+            "fuckin",
+            "goddamn",
+            "crap",
+            "fucking",
+            "cock",
+            "damm",
+            "fuck",
+            "shit",
+            "damn",
+            "freaken",
+            "frakking",
+            "freakin",
+            "fricken",
+            "friggen",
+            "fuckwit",
+            "nutbags",
+            "tits",
+            "titties",
+            "babes",
+            "teabaggers",
+            "nutjob",
+            "horseshit",
+            "dimwit",
+            "lmao",
+            "boobs",
+            "dirtbag",
+            "wtf",
+            "chick",
+            "shite",
+            "wuss",
+            "prostitute",
+            "shyt",
+            "dickhead",
+            "douche",
+            "fkn",
+            "nigga",
+            "skanky",
+            "boobies",
+            "nipples",
+            "booty",
+            "breasts",
+            "retard",
+            "niggas",
+            "niggers",
+            "mofos",
+            "motherfuckin",
+            "gay",
+            "gey",
+            "gei",
+            "gayy"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Niko_Attributes",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "location",
+          "synonyms": [
+            "place",
+            "house",
+            "village",
+            "home",
+            "houses",
+            "locations",
+            "town",
+            "apartment",
+            "homes",
+            "villages",
+            "places",
+            "bedroom",
+            "mansion",
+            "bungalow",
+            "Where",
+            "what place",
+            "where is"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "age",
+          "synonyms": [
+            "ages",
+            "older",
+            "years",
+            "old",
+            "aged",
+            "decades",
+            "younger",
+            "adults",
+            "yrs",
+            "year",
+            "yr",
+            "young",
+            "adult",
+            "children",
+            "teenagers",
+            "born",
+            "birthday",
+            "birth",
+            "created",
+            "new",
+            "child",
+            "kid",
+            "kitten"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "gender",
+          "synonyms": [
+            "sex",
+            "orientation",
+            "identity",
+            "male",
+            "female",
+            "boy",
+            "girl",
+            "man",
+            "woman",
+            "girls",
+            "guy",
+            "women",
+            "lady",
+            "wife",
+            "kid",
+            "sexual",
+            "men",
+            "boys",
+            "chick"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "name",
+          "synonyms": [
+            "names",
+            "surname"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "species",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "People",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Niko",
+          "synonyms": [
+            "niko",
+            "you",
+            "your",
+            "nico",
+            "yourself"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "penguin",
+          "synonyms": [
+            "the penguin",
+            "🐧"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Alula",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Calamus",
+          "synonyms": [
+            "cal",
+            "calamus",
+            "cally"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "mama",
+          "synonyms": [
+            "mother",
+            "mom",
+            "mommy",
+            "parent",
+            "parents",
+            "momma",
+            "mum",
+            "mothers",
+            "mamma",
+            "moms",
+            "mommies"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Niko_Favorites",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "food",
+          "synonyms": [
+            "pancakes",
+            "eat",
+            "to eat",
+            "thing to eat",
+            "eating",
+            "eaten",
+            "foods",
+            "meals",
+            "ate",
+            "crepes",
+            "consume",
+            "flapjacks",
+            "foodstuffs",
+            "dessert",
+            "meal",
+            "desserts",
+            "consumed",
+            "eats",
+            "foodstuff",
+            "snacks",
+            "nutritious",
+            "dinners",
+            "devoured",
+            "consumption",
+            "dinner",
+            "snack",
+            "lunches",
+            "sandwiches",
+            "supper",
+            "diet",
+            "nutrition",
+            "delicious",
+            "drink",
+            "consuming",
+            "lunch",
+            "drinks",
+            "beverages",
+            "pastries",
+            "nutritional",
+            "breakfast",
+            "entrees",
+            "salads",
+            "appetizers",
+            "omelettes"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-person",
+      "values": []
+    },
+    {
+      "entity": "Feelings",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Miss",
+          "synonyms": [
+            "missed"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "remember",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "sure",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "output": {},
+      "parent": "node_3_1556169099589",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@People",
+      "dialog_node": "node_4_1556169136950",
+      "digress_out": "allow_all"
+    },
+    {
+      "type": "standard",
+      "title": "Do you remember calamus and alula",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Mhm! I wish I could go back and see them... :niko_sad:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1555045398717",
+      "metadata": {},
+      "dialog_node": "node_10_1555045530831",
+      "previous_sibling": "node_9_1555045420140"
+    },
+    {
+      "type": "standard",
+      "title": "Are you a cat?",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "No..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1555045398717",
+      "metadata": {},
+      "dialog_node": "node_13_1555045786256",
+      "previous_sibling": "node_12_1555045650211"
+    },
+    {
+      "type": "standard",
+      "title": "Would you want to fly again?",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yes! It was amazing! :niko_pancakes:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1555045398717",
+      "metadata": {},
+      "dialog_node": "node_12_1555045650211",
+      "previous_sibling": "node_11_1555045612727"
+    },
+    {
+      "type": "standard",
+      "title": "*pats*",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hehe... aww, that's nice"
+              },
+              {
+                "text": ":niko_83c:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_8_1555045398717",
+      "metadata": {},
+      "dialog_node": "node_11_1555045612727",
+      "previous_sibling": "node_10_1555045530831"
+    },
+    {
+      "type": "standard",
+      "title": "Are you still afraid of ladders?",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "...yeah... still scary... :niko_distressed2:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1555045398717",
+      "metadata": {},
+      "dialog_node": "node_9_1555045420140"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "H E L L O :hello_penguin: "
+              },
+              {
+                "text": "Uh... yeah... :niko_wtf:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_2_1556168247976",
+      "metadata": {},
+      "conditions": "@People:penguin",
+      "dialog_node": "node_1_1556168754621",
+      "previous_sibling": "node_4_1556168273120"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Of course I remember Calamus, $person!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1556168247976",
+      "metadata": {},
+      "conditions": "@People:Calamus",
+      "dialog_node": "node_3_1556168257587",
+      "previous_sibling": "node_7_1556168346650"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Of course I remember Alula, $person!"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_2_1556168247976",
+      "metadata": {},
+      "conditions": "@People:Alula",
+      "dialog_node": "node_4_1556168273120",
+      "previous_sibling": "node_3_1556168257587"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Of course I remember Calamus and Alula! They were so nice!"
+              },
+              {
+                "text": "I haven't forgotten Calamus and Alula, $person, don't worry!"
+              },
+              {
+                "text": "Calamus and Alula were so nice to us! I miss them..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_2_1556168247976",
+      "metadata": {},
+      "conditions": "@People:Calamus && @People:Alula",
+      "dialog_node": "node_7_1556168346650",
+      "previous_sibling": "node_8_1556168599607"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Not sure I remember that clearly... sorry, $person"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_2_1556168247976",
+      "metadata": {},
+      "dialog_node": "node_6_1556168316572",
+      "previous_sibling": "node_1_1556168754621"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I couldn't forget my own mama, $person! Besides, now I'm home!"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_2_1556168247976",
+      "metadata": {},
+      "conditions": "@People:mama",
+      "dialog_node": "node_8_1556168599607"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "That's nice of you... but do you really mean it?"
+              },
+              {
+                "text": "um... can you apologize again? You said mean things so many times..."
+              },
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1555558906705",
+      "context": {
+        "rudeness": "<? $rudeness - 1 ?>"
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_4_1556166920773",
+      "previous_sibling": "node_3_1556166842993"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hm... that's a bit better... thank you, $person."
+              },
+              {
+                "text": "$person, thanks... I'm still uneasy, but your apologies help."
+              },
+              {
+                "text": "Thanks, $person. Please don't talk like that again!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_3_1555558906705",
+      "context": {
+        "rudeness": "<? $rudeness - 1 ?>"
+      },
+      "metadata": {},
+      "conditions": "$rudeness < 2",
+      "dialog_node": "node_3_1556166842993",
+      "previous_sibling": "node_8_1556167691732"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I forgive you."
+              },
+              {
+                "text": "I'll be okay..."
+              },
+              {
+                "text": "It will be okay..."
+              },
+              {
+                "text": "It's okay"
+              },
+              {
+                "text": "That's alright"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_3_1555558906705",
+      "metadata": {},
+      "conditions": "$rudeness < 1",
+      "dialog_node": "node_8_1556167691732",
+      "previous_sibling": "node_5_1556167080443"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You _should_ be sorry... I think you owe me $rudeness more apologies..."
+              },
+              {
+                "text": "$person, thank you. Could you apologize some more?"
+              },
+              {
+                "text": "I know it's silly, but please apologize some more. I don't want you to forget and be rude again!"
+              },
+              {
+                "text": "I think you owe me like $rudeness more apologies or something... you really went off the rails there..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1555558906705",
+      "context": {
+        "rudeness": "<? $rudeness - 1 ?>"
+      },
+      "metadata": {},
+      "conditions": "$rudeness > 2",
+      "dialog_node": "node_5_1556167080443"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yikes!"
+              },
+              {
+                "text": "That sounds dangerous..."
+              },
+              {
+                "text": "Mama said that could get me hurt..."
+              },
+              {
+                "text": "I'm a little afraid of that..."
+              },
+              {
+                "text": "That sounds kinda scary..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_23_1555085096210",
+      "metadata": {},
+      "conditions": "@negative_and_positive:dangerous",
+      "dialog_node": "node_5_1555367124712",
+      "previous_sibling": "node_4_1555367121870"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hey! I don't think you're supposed to say that!"
+              },
+              {
+                "text": "That's not very nice!"
+              },
+              {
+                "text": "Don't say that!"
+              },
+              {
+                "text": "That's very rude."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_23_1555085096210",
+      "context": {
+        "rudeness": "<? $rudeness + 1 ?>"
+      },
+      "metadata": {},
+      "conditions": "@negative_and_positive:swears",
+      "dialog_node": "node_4_1555367121870"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$person, are you trying to talk about me?"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_4_1556169136950",
+      "metadata": {},
+      "conditions": "@People:Niko",
+      "dialog_node": "node_2_1556169431170",
+      "previous_sibling": "node_8_1556169168535"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$person, I'm not sure what you're saying about Alula."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_4_1556169136950",
+      "metadata": {},
+      "conditions": "@People:Alula",
+      "dialog_node": "node_7_1556169166900",
+      "previous_sibling": "node_6_1556169165367"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$person, I'm not sure what you're saying about Calamus."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_4_1556169136950",
+      "metadata": {},
+      "conditions": "@People:Calamus",
+      "dialog_node": "node_6_1556169165367",
+      "previous_sibling": "node_5_1556169157798"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$person, I'm not sure what you're saying about the penguin. Maybe we should talk about something else... :hello_penguin:"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_4_1556169136950",
+      "metadata": {},
+      "conditions": "@People:penguin",
+      "dialog_node": "node_8_1556169168535",
+      "previous_sibling": "node_7_1556169166900"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$person, I'm not sure who that person is!"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_4_1556169136950",
+      "metadata": {},
+      "dialog_node": "node_1_1556169411782",
+      "previous_sibling": "node_2_1556169431170"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$person, I'm not sure what you're saying about mama."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1556169136950",
+      "metadata": {},
+      "conditions": "@People:mama",
+      "dialog_node": "node_5_1556169157798"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "[What is your name?]"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_11_1555315042205",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_11_1555315042205"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_13_1555315214731",
+      "previous_sibling": "node_12_1555315193514"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "[Great! If you need to, you can ask to change your name later.]"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_11_1555315042205",
+      "context": {
+        "name_set": ""
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#Bot_Control_Approve_Response",
+      "dialog_node": "node_12_1555315193514"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "*hug* :niko_smile:"
+              },
+              {
+                "text": "*hugs you* :niko_smile:"
+              },
+              {
+                "text": "*gives you a hug* :niko_83c:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_3_1547091601199",
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_3_1557284069915",
+      "previous_sibling": "node_4_1557284073185"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "*hugs*"
+              },
+              {
+                "text": "*cuddles back*"
+              },
+              {
+                "text": "Warm~"
+              },
+              {
+                "text": "Oh! Hehe. :niko_83c:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_3_1547091601199",
+      "metadata": {},
+      "conditions": "@actions:cuddle",
+      "dialog_node": "node_4_1557284073185",
+      "previous_sibling": "node_5_1557284131835"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Whee! :niko_smile: *hugs back*"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_3_1547091601199",
+      "metadata": {},
+      "conditions": "@actions:lift",
+      "dialog_node": "node_5_1557284131835"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1555314725092",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1555314725092",
+      "previous_sibling": "handler_7_1555314725092"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_6_1555314725092",
+      "event_name": "input",
+      "dialog_node": "handler_7_1555314725092"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Excellent. Thank you!",
+            "Great! Thanks!",
+            "Okay, great!",
+            "Cool, thank you!"
+          ],
+          "selection_policy": "random"
+        }
+      },
+      "parent": "slot_10_1547271005792",
+      "metadata": {},
+      "event_name": "filled",
+      "dialog_node": "handler_5_1551667350536",
+      "previous_sibling": "handler_11_1547271005792"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Hmm... is that your name?",
+            "I still don't recognize your name... if you need to, phrase it as \"My name is ____\"",
+            "Hmm... still not working...",
+            "Sorry for the issue, please inform my coder, as I cannot parse your name."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_10_1547271005792",
+      "metadata": {},
+      "event_name": "nomatch",
+      "dialog_node": "handler_6_1551667350536",
+      "previous_sibling": "handler_5_1551667350536"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1547271005792",
+      "context": {
+        "person": "@sys-person"
+      },
+      "metadata": {},
+      "conditions": "@sys-person",
+      "event_name": "input",
+      "dialog_node": "handler_11_1547271005792",
+      "previous_sibling": "handler_12_1547271005792"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1547271005792",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_12_1547271005792"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I'm just a kid, I don't know this stuff!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1555364790957",
+      "metadata": {},
+      "conditions": "#Ask_World_Facts && @Politics",
+      "dialog_node": "node_5_1555365449589",
+      "previous_sibling": "node_4_1555364889875"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Clouds are in the sky! They're so fluffy!"
+              },
+              {
+                "text": "Do you like to look at the clouds in the sky? I do."
+              },
+              {
+                "text": "Sometimes I pretend the clouds in the sky are shapes, or animals!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_3_1555364790957",
+      "metadata": {},
+      "conditions": "#Ask_World_Facts && @Objects:sky",
+      "dialog_node": "node_4_1555364889875"
+    },
+    {
+      "type": "slot",
+      "parent": "node_2_1555314451744",
+      "dialog_node": "slot_6_1555314725092",
+      "previous_sibling": "node_11_1555315042205"
+    },
+    {
+      "type": "standard",
+      "title": "Save their name",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "[Your name is $person?]"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1555314451744",
+      "context": {
+        "person": "<?input_text?>"
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_11_1555315042205"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You don't look like a cat..."
+              },
+              {
+                "text": "I don't think so. :niko_83c:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_13_1555432519465",
+      "metadata": {},
+      "conditions": "@animals:cat",
+      "dialog_node": "node_4_1557284438506",
+      "previous_sibling": "node_14_1555432536145"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You're $person! :niko_speak:"
+              },
+              {
+                "text": "You're $person! Don't worry, I didn't forget!"
+              },
+              {
+                "text": "Did you forget your own name? You're $person, of course!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_13_1555432519465",
+      "metadata": {},
+      "conditions": "@User:name",
+      "dialog_node": "node_14_1555432536145"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I'm not a cat! :niko_speak:"
+              },
+              {
+                "text": "Cats walk on four legs! :niko_speak: "
+              },
+              {
+                "text": "I don't eat mice! :niko_speak: "
+              },
+              {
+                "text": "$person!, knock it off! You know I'm not a cat! :niko_speak: "
+              },
+              {
+                "text": "I wish everyone would stop asking me that... :niko_eyeclosed:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_1_1556168146031",
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_1_1557283996061",
+      "previous_sibling": "node_2_1557283997987"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I'm very sure I'm not a cat! My teacher says so!"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1556168146031",
+      "metadata": {},
+      "conditions": "@Feelings:sure",
+      "dialog_node": "node_2_1557283997987"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "parent": "node_11_1556167996381",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@Feelings:remember",
+      "dialog_node": "node_2_1556168247976",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_1_1556168146031"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "parent": "node_11_1556167996381",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@Niko_Favorites",
+      "dialog_node": "node_2_1556168097873",
+      "previous_sibling": "node_15_1555083918049"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "parent": "node_11_1556167996381",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@animals:cat",
+      "dialog_node": "node_1_1556168146031",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_2_1556168097873"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "parent": "node_11_1556167996381",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@Niko_Attributes",
+      "dialog_node": "node_15_1555083918049",
+      "digress_out": "allow_all"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Mama's doing well! She made me pancakes today! :niko_pancakes:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1554492958092",
+      "metadata": {},
+      "dialog_node": "node_5_1555041991284",
+      "previous_sibling": "node_6_1555041995711"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I really missed mama... :niko_eyeclosed:"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_1_1554492958092",
+      "metadata": {},
+      "conditions": "@Feelings:Miss",
+      "dialog_node": "node_6_1555041995711"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I've been alright."
+              },
+              {
+                "text": "I'm doing okay"
+              },
+              {
+                "text": "I am well"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_2_1554492525344",
+      "metadata": {},
+      "dialog_node": "node_9_1555430473501",
+      "previous_sibling": "node_10_1555430475207"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I slept pretty well last night. :niko_speak:"
+              },
+              {
+                "text": "I was up a little later than usual last night, but I slept pretty well. :niko_speak:"
+              },
+              {
+                "text": "I've been kind of tired lately, but I'm going to get to bed early tonight! :niko_yawn:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_2_1554492525344",
+      "metadata": {},
+      "conditions": "@actions:sleep",
+      "dialog_node": "node_10_1555430475207"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Beep? :niko3:"
+              },
+              {
+                "text": "Beep! :niko_speak:"
+              },
+              {
+                "text": "Are you a robot now? :niko_what2:"
+              },
+              {
+                "text": "I like that sound. :niko_83c:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_2_1555364472032",
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_2_1557284231144",
+      "previous_sibling": "node_1_1557284222310"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Beep beep, I'm a sheep!"
+              },
+              {
+                "text": "Hehe~ That's pretty catchy, $person."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_2_1555364472032",
+      "metadata": {},
+      "conditions": "@animals:sheep",
+      "dialog_node": "node_1_1557284222310"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Looks like I don't have an answer to that question about me yet."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_15_1555083918049",
+      "metadata": {},
+      "dialog_node": "node_6_1555368807829",
+      "previous_sibling": "node_20_1555084012416"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hm?"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_15_1555083918049",
+      "metadata": {},
+      "conditions": "@Niko_Attributes",
+      "dialog_node": "node_20_1555084012416",
+      "previous_sibling": "node_17_1555083986986"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "At my village!"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_15_1555083918049",
+      "metadata": {},
+      "conditions": "@Niko_Attributes:location",
+      "dialog_node": "node_17_1555083986986",
+      "previous_sibling": "node_18_1555083994789"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "...not a cat"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_15_1555083918049",
+      "metadata": {},
+      "conditions": "@Niko_Attributes:species",
+      "dialog_node": "node_1_1556725577034",
+      "previous_sibling": "node_22_1555084041951"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "..."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_15_1555083918049",
+      "metadata": {},
+      "conditions": "@Niko_Attributes:gender",
+      "dialog_node": "node_18_1555083994789",
+      "previous_sibling": "node_16_1555083939042"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "That's not very nice to ask! I'm a kid."
+              },
+              {
+                "text": "I'm old enough to help babysit the little kids!"
+              },
+              {
+                "text": "I'm a bit older than Alula, and younger than Calamus."
+              },
+              {
+                "text": "I'm like 8 years old..."
+              },
+              {
+                "text": "I'm still like 8 years old... I don't know how it works in your world but it hasn't been that long here..."
+              },
+              {
+                "text": "I told you already, did you forget? I don't want to keep reminding you..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_15_1555083918049",
+      "metadata": {},
+      "conditions": "@Niko_Attributes:age",
+      "dialog_node": "node_16_1555083939042",
+      "previous_sibling": "node_1_1556725577034"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "My name is Niko! Did you forget...?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_15_1555083918049",
+      "metadata": {},
+      "conditions": "@Niko_Attributes:name",
+      "dialog_node": "node_22_1555084041951"
+    },
+    {
+      "type": "standard",
+      "title": "They've played before. Ask their name.",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "[Great!]"
+              },
+              {
+                "text": "[We'll need a little information to find your Niko.]"
+              },
+              {
+                "text": "[First of all, what name did Niko call you? Please type only your name as a response.]"
+              },
+              {
+                "text": "[(You can change it later by asking)]"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "metadata": {
+        "fallback": "leave"
+      },
+      "conditions": "#Bot_Control_Approve_Response",
+      "dialog_node": "node_2_1555314451744",
+      "digress_out": "allow_all",
+      "previous_sibling": "handler_1_1547086659822"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Hello! I need a little information before we begin."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "Welcome",
+      "disabled": true,
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_1_1547086659822",
+      "previous_sibling": "slot_10_1547271005792"
+    },
+    {
+      "type": "standard",
+      "title": "Go finish it. Waits for input.",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "[Please come back when you have finished OneShot, including Solstice!]"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_7_1551667752966",
+      "previous_sibling": "node_2_1555314451744"
+    },
+    {
+      "type": "response_condition",
+      "output": {},
+      "parent": "Welcome",
+      "disabled": true,
+      "metadata": {},
+      "dialog_node": "node_1_1551667088290",
+      "previous_sibling": "node_7_1551667752966"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "Welcome",
+      "metadata": {},
+      "variable": "$person",
+      "dialog_node": "slot_10_1547271005792"
+    },
+    {
+      "type": "standard",
+      "title": "Continued rudeness",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hey! Cut it out!"
+              },
+              {
+                "text": "$person, please stop with that language!"
+              },
+              {
+                "text": "Do you always talk like this?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1555558780131",
+      "context": {
+        "rudeness": "<? $rudeness + 1 ?>"
+      },
+      "metadata": {},
+      "conditions": "@negative_and_positive:swears",
+      "dialog_node": "node_7_1555559462796",
+      "previous_sibling": "node_3_1555558906705"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": ":("
+              },
+              {
+                "text": "You really should watch your language better, $person... I don't like it when you're rude."
+              },
+              {
+                "text": "You should say you're sorry when you talk like you did earlier... I mean I'm still upset!"
+              },
+              {
+                "text": "Well, are you gonna apologize?"
+              },
+              {
+                "text": "Are you not sorry? I thought you were nicer than this..."
+              },
+              {
+                "text": "Well you really should change how you speak and learn to apologize..."
+              },
+              {
+                "text": "I'm just a kid, please don't say rude things around me!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1555558780131",
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_2_1555558844180",
+      "previous_sibling": "node_1_1556166107894"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You're being very rude, $person."
+              },
+              {
+                "text": "$person, you need to apologize if you want to talk more, otherwise I'll disconnect."
+              },
+              {
+                "text": "$person... please cut it out. Just tell me you're sorry... it would make me feel better."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1555558780131",
+      "metadata": {},
+      "conditions": "$rudeness > 4",
+      "dialog_node": "node_1_1556166107894",
+      "previous_sibling": "node_2_1556166445978"
+    },
+    {
+      "type": "standard",
+      "title": "Possible threats.",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yikes!"
+              },
+              {
+                "text": "Is that a threat...?"
+              },
+              {
+                "text": "You're kind of scaring me, $person..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1555558780131",
+      "metadata": {},
+      "conditions": "@negative_and_positive:dangerous",
+      "dialog_node": "node_8_1555559499760",
+      "previous_sibling": "node_7_1555559462796"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "[Niko has temporarily muted you. They'll see messages when they check.]"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "time": 10000,
+            "typing": false,
+            "response_type": "pause"
+          }
+        ]
+      },
+      "parent": "node_1_1555558780131",
+      "metadata": {},
+      "conditions": "$rudeness > 5",
+      "dialog_node": "node_2_1556166445978",
+      "previous_sibling": "node_8_1555559499760"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "parent": "node_1_1555558780131",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#apology",
+      "dialog_node": "node_3_1555558906705",
+      "digress_out": "allow_all"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello!"
+              },
+              {
+                "text": "Hi!"
+              },
+              {
+                "text": "What's up?"
+              },
+              {
+                "text": "Hiya!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1547090150844",
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_10_1547090722076",
+      "previous_sibling": "node_17_1555435324847"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "H E L L O :hello_penguin:"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_6_1547090150844",
+      "metadata": {},
+      "conditions": "@People:penguin",
+      "dialog_node": "node_17_1555435324847",
+      "previous_sibling": "node_9_1547090707931"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi... I'm Niko... who's there? Are you friendly?"
+              },
+              {
+                "text": "Hello...? I said hi already..."
+              },
+              {
+                "text": "Hello again..."
+              },
+              {
+                "text": "Are you gonna introduce yourself?"
+              },
+              {
+                "text": "Uh... What's your name...?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_6_1547090150844",
+      "metadata": {},
+      "conditions": "$niko_realized_who != true",
+      "dialog_node": "node_9_1547090707931"
+    },
+    {
+      "type": "standard",
+      "title": "Niko realizes who user is. Only once.",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$person? :niko_shock:"
+              },
+              {
+                "text": ""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "time": 1000,
+            "typing": false,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Oh my goodness! $person, it's me! It's Niko! :niko_surprised:"
+              },
+              {
+                "text": "You found me again? :niko_distressed_meow:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "time": 1000,
+            "typing": false,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "I've missed you so much! :niko_cry: "
+              },
+              {
+                "text": "It feels like so long since I heard you... :niko_less_sad:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1555367041459",
+      "context": {
+        "niko_realized_who": true
+      },
+      "metadata": {},
+      "conditions": "$niko_realized_who != true && input_text.toLowerCase().contains($person.toLowerCase()) == true",
+      "dialog_node": "node_7_1547090291967",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome, Played? also Init variables",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "[Hello, you seem to be new.]"
+              },
+              {
+                "text": "[This bot assumes you have played OneShot and completed both the main game and Solstice.]"
+              },
+              {
+                "text": "[If you have not, many things may not make sense.]"
+              },
+              {
+                "text": "[There may also be spoilers.]"
+              },
+              {
+                "text": "[If you have not completed OneShot yet, do not use the bot further.]"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "time": 5000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "[Have you completed OneShot, including Solstice?]"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1555367041459",
+      "context": {
+        "rudeness": 0
+      },
+      "metadata": {
+        "fallback": "leave",
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome",
+      "digress_out": "allow_all"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hm?"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_2_1556168097873",
+      "metadata": {},
+      "conditions": "@Niko_Favorites",
+      "dialog_node": "node_9_1556168097875",
+      "previous_sibling": "node_7_1556168097875"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Looks like I don't have an answer to that question about my favorites yet."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_2_1556168097873",
+      "metadata": {},
+      "dialog_node": "node_12_1556168097875",
+      "previous_sibling": "node_9_1556168097875"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The special Pancakes mama makes for me are my favorite! They're amazing! :niko_pancakes:"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_2_1556168097873",
+      "metadata": {},
+      "conditions": "@Niko_Favorites:food",
+      "dialog_node": "node_7_1556168097875"
+    },
+    {
+      "type": "standard",
+      "title": "Jump to welcome message.",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_7_1551667752966",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_8_1551667965391"
+    },
+    {
+      "type": "standard",
+      "title": "Back to Niko",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "[Now back to Niko...]"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_12_1555315193514",
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "node_16_1555315802029",
+      "previous_sibling": "node_1_1547088910767"
+    },
+    {
+      "type": "standard",
+      "title": "BEGIN. Only once.",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "[Here we go!]"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "time": 3000,
+            "typing": false,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "[CONNECTING...    SUCCESS!]"
+              },
+              {
+                "text": "[FINDING YOUR NIKO...    SUCCESS]"
+              },
+              {
+                "text": "[STARTING DREAM LINK...    SUCCESS]"
+              },
+              {
+                "text": "[ALL TASKS COMPLETE...]"
+              },
+              {
+                "text": "[NIKO IS ONLINE]"
+              },
+              {
+                "text": "[CHAT IS NOW ACTIVE]"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "time": 5000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Um... Hello? :niko_distressed:"
+              },
+              {
+                "text": "Is anybody there? :niko_distressed_talk:"
+              },
+              {
+                "text": "I'm... dreaming? but it's dark... and I think I hear someone... :niko_distressed2:"
+              },
+              {
+                "text": "Hellooo? :niko_speak:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_12_1555315193514",
+      "context": {
+        "begun": true
+      },
+      "metadata": {},
+      "conditions": "$begun != true",
+      "dialog_node": "node_1_1547088910767"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "_Confused cat noises_ :niko_what:"
+              },
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_3_1556169099589"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yeah"
+              },
+              {
+                "text": "mhm"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#reassurance",
+      "dialog_node": "node_3_1554492654767",
+      "previous_sibling": "node_4_1556169784847"
+    },
+    {
+      "type": "folder",
+      "title": "Specific Questions Asked",
+      "metadata": {},
+      "dialog_node": "node_3_1555364790957",
+      "previous_sibling": "node_8_1555045398717"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#user_talking_about_self",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_13_1555432519465",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_23_1555085096210"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good morning!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#good_morning",
+      "dialog_node": "node_14_1555083475886",
+      "previous_sibling": "node_3_1554492654767"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "mhm!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#Bot_Control_Approve_Response",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1547091356251",
+      "previous_sibling": "node_3_1547091601199"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi, who's there?"
+              },
+              {
+                "text": "Uh... Who are you?"
+              },
+              {
+                "text": "You never told me your name..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "$niko_realized_who != true",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1555369041453",
+      "previous_sibling": "node_9_1555559813345"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I… don't know what that is."
+              },
+              {
+                "text": "What are you doing?"
+              },
+              {
+                "text": "hmm... :niko_83c:"
+              },
+              {
+                "text": "*dabs* like that? :niko_speak:"
+              },
+              {
+                "text": "*dab dab dab dab dab*"
+              },
+              {
+                "text": "https://niko-the-solar-messiah.tumblr.com/post/163704103018/slowely-loses-all-my-followers"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "@actions:dab",
+      "dialog_node": "node_10_1557272781884",
+      "previous_sibling": "node_3_1555364790957"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I love you too, $person! :niko_smile:"
+              },
+              {
+                "text": "I love you! :niko_smile:"
+              },
+              {
+                "text": "And I love you! :niko_smile:"
+              },
+              {
+                "text": "Love you too! :niko_smile:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#express_love && @People:Niko",
+      "dialog_node": "node_5_1557286341920",
+      "previous_sibling": "node_1_1555040696445"
+    },
+    {
+      "type": "folder",
+      "title": "Unknown/Clarify Known Entity",
+      "metadata": {},
+      "dialog_node": "node_3_1556169099589",
+      "previous_sibling": "node_1_1555362290094"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@silly:beep",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1555364472032",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_10_1557272781884"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#General_Greetings",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_6_1547090150844",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_13_1555432519465"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#hug",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1547091601199",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_2_1547091540385"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I missed you too :niko_eyeclosed:"
+              },
+              {
+                "text": "I missed you a lot :niko_eyeclosed2:"
+              },
+              {
+                "text": "It was so sad when I had to leave you. I've missed you a lot. :niko_eyeclosed:"
+              },
+              {
+                "text": "I missed you. I thought I'd never hear you again! :niko_eyeclosed2:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#missed_you",
+      "dialog_node": "node_2_1547091540385",
+      "previous_sibling": "node_11_1556167996381"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#Ask_Niko_Feeling && @People:Niko",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1554492525344",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_1_1554492958092"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Not sure."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#Ask_Niko_Opinion",
+      "dialog_node": "node_4_1556169784847",
+      "previous_sibling": "node_2_1554492525344"
+    },
+    {
+      "type": "folder",
+      "title": "Based on Specific Asks found on askblogs",
+      "metadata": {},
+      "dialog_node": "node_8_1555045398717",
+      "previous_sibling": "node_3_1555041206547"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "$person's Rudeness: $rudeness"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "input_text.toLowerCase().contains('rudeness check') == true",
+      "dialog_node": "node_9_1555559813345",
+      "previous_sibling": "node_14_1555315345853"
+    },
+    {
+      "type": "standard",
+      "output": {},
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#Ask_Niko_Feeling && @People:mama",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1554492958092",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_1_1554492240921"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Goodbye for now"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#General_Ending",
+      "dialog_node": "node_1_1555362290094",
+      "previous_sibling": "node_2_1555364472032"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": ":niko_83c:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#aww || #hehe",
+      "dialog_node": "node_1_1554492240921",
+      "previous_sibling": "node_1_1547091356251"
+    },
+    {
+      "type": "standard",
+      "title": "User saying negative things",
+      "output": {},
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@negative_and_positive",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_23_1555085096210",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_1_1555558780131"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You're welcome!"
+              },
+              {
+                "text": "Of course!"
+              },
+              {
+                "text": "Certainly!"
+              },
+              {
+                "text": "Mhm!"
+              },
+              {
+                "text": "Thank you!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#General_Positive_Feedback",
+      "dialog_node": "node_3_1555041206547",
+      "previous_sibling": "node_5_1557286341920"
+    },
+    {
+      "type": "folder",
+      "title": "Rude or Apology",
+      "metadata": {},
+      "conditions": "$rudeness > 0 || #apology",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1555558780131",
+      "previous_sibling": "node_7_1555369041453"
+    },
+    {
+      "type": "folder",
+      "metadata": {},
+      "conditions": "#Ask_Niko_Facts",
+      "dialog_node": "node_11_1556167996381",
+      "previous_sibling": "node_6_1547090150844"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "[Okay, what is your name?]"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_11_1555315042205"
+      },
+      "conditions": "#Name_Change",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_14_1555315345853",
+      "previous_sibling": "node_3_1555367041459"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Goodnight! :niko_yawn:"
+              },
+              {
+                "text": "Sweet dreams to you! :niko_smile:"
+              },
+              {
+                "text": "Rest well! :niko_speak:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#goodnight",
+      "dialog_node": "node_1_1555040696445",
+      "previous_sibling": "node_14_1555083475886"
+    },
+    {
+      "type": "folder",
+      "title": "Setup",
+      "metadata": {},
+      "dialog_node": "node_3_1555367041459"
+    }
+  ],
+  "workspace_id": "d1b5c0da-3f65-49de-b6a2-5766665d3db4",
+  "counterexamples": [
+    {
+      "text": "(Aw fuck)"
+    },
+    {
+      "text": "GUN"
+    },
+    {
+      "text": "I HAVE A GUN]"
+    },
+    {
+      "text": "I restarted it no no no"
+    },
+    {
+      "text": "LoOkS lIkE YoU can LeAvE him On OvErNiGjT"
+    },
+    {
+      "text": "mama"
+    },
+    {
+      "text": "Niko"
+    },
+    {
+      "text": "_Niko survived the night oh phew_"
+    },
+    {
+      "text": "see"
+    },
+    {
+      "text": "Swear"
+    },
+    {
+      "text": "well"
+    }
+  ],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}

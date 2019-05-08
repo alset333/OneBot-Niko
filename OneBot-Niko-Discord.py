@@ -21,11 +21,12 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 from discord.ext import commands
 from discord import Game, Status
-import os
+import os, sys
 import WatsonAssistantV2Utility
 from time import sleep
 from Logger import log, close_log
 import json
+from concurrent.futures._base import CancelledError
 
 VERSION = '2019-01-05'
 
@@ -53,6 +54,8 @@ Coded from the ground up with simplified AI to avoid Squares.
 It does not run a world simulation, and communication is not always stable, but it's a start.
 """
 bot = commands.Bot(command_prefix='?', description=description)
+
+logged_out = False
 
 # Note, the authors are matched to the bot even across servers.
 # You can start a conversation in one and continue in another. Only one Niko per person!
@@ -127,7 +130,8 @@ async def logout(ctx):
     """Since PyCharm doesn't send/wait for Ctrl+C, use this to gracefully disconnect"""
     await ctx.send("Logging out")
     save_context()
-    await bot.logout()
+    await logout_bot_async()
+
 
 
 @bot.command()
@@ -161,6 +165,35 @@ The program's source can be found at https://github.com/alset333/OneBot-Niko
     """)
 
 
+def logout_bot():
+    global logged_out
+    logged_out = True
+    for assistant_key in assistants:
+        a = assistants[assistant_key]
+        a.disconnect()
+
+    log("Contexts:", contexts)
+    log("Assistants:", assistants)
+
+    print("Saving on exit...")
+    save_context()
+    print("Saved!")
+
+    save_file.close()
+
+    close_log()
+
+    print("Done.")
+
+
+async def logout_bot_async():
+    try:
+        await bot.logout()
+    except CancelledError as e:
+        print("Exception", type(e), "on logout. This should be fine.")
+
+    logout_bot()
+
 @bot.command()
 @commands.has_permissions(administrator=True)
 async def update(ctx):
@@ -173,15 +206,31 @@ async def update(ctx):
 
     # Write the response
     response = "Updating at the request of "\
-               + str(author.mention) + " '" + str(author.nick) + "' " + str(author) + " (" + str(author.id) + ")..."
+               + str(author.mention) + " '" + str(author.nick) + "' " + str(author) + " (" + str(author.id) + ")"
 
     # Print the response, and send the response
     print(response)
     await ctx.send(response)
 
+    # Shut down the bot and save/close files
+    save_context()
+    await logout_bot_async()
+
+
+    # Update
     os.system("git fetch && git pull")
 
-    print("Check now?")
+    # Start again
+
+    args = sys.argv[:]
+    print('Re-spawning %s' % ' '.join(args))
+
+    args.insert(0, sys.executable)
+    if sys.platform == 'win32':
+        args = ['"%s"' % arg for arg in args]
+
+    os.chdir(sys.path[0])
+    os.execv(sys.executable, args)
 
 
 @bot.listen()
@@ -273,20 +322,6 @@ async def reply(message, response):
 load_context()
 bot.run(token)
 
-for assistant_key in assistants:
-    a = assistants[assistant_key]
-    a.disconnect()
+if not logged_out:
+    logout_bot()
 
-log("Contexts:", contexts)
-log("Assistants:", assistants)
-
-print("Saving on exit...")
-save_context()
-print("Saved!")
-
-save_file.close()
-
-
-close_log()
-
-print("Done.")

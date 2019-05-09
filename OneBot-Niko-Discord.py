@@ -67,6 +67,14 @@ contexts = {}  # A dictionary matching each "message.author" to their "context" 
 save_file_path = os.path.normpath('save_data.json')
 save_file = open(save_file_path, 'r+')  # Open the save file for writing
 
+update_channel_id_path = os.path.normpath("update_channel_id")
+if os.path.isfile(update_channel_id_path):
+    update_channel_id = int(open(update_channel_id_path, 'r').read())
+    os.remove(update_channel_id_path)
+    print("Chan id is", update_channel_id)
+else:
+    update_channel_id = None
+
 
 def load_context():
     save_file_contents = save_file.read()  # Read the contents
@@ -99,6 +107,10 @@ async def on_ready():
 
     game = Game("with friends!")
     await bot.change_presence(status=Status.online, activity=game)
+
+    if update_channel_id:
+        channel = bot.get_channel(update_channel_id)
+        await channel.send("[Update complete!]")
 
 
 @bot.command()
@@ -194,6 +206,7 @@ async def logout_bot_async():
 
     logout_bot()
 
+
 @bot.command()
 @commands.has_permissions(administrator=True)
 async def update(ctx):
@@ -205,17 +218,23 @@ async def update(ctx):
     await message.delete()
 
     # Write the response
-    response = "Updating at the request of "\
-               + str(author.mention) + " '" + str(author.nick) + "' " + str(author) + " (" + str(author.id) + ")"
+    response = "[Updating at the request of "\
+               + str(author.mention) + " '" + str(author.nick) + "' " + str(author) + " (" + str(author.id) + ")]"
 
     # Print the response, and send the response
     print(response)
     await ctx.send(response)
 
+    # save the ctx to a file temporarily so we can reply when the update is done
+    chan_out = open(update_channel_id_path, 'wb')
+    chan_out.write(str(message.channel.id).encode('utf-8'))
+    chan_out.close()
+
     # Shut down the bot and save/close files
     save_context()
     await logout_bot_async()
 
+    exit()
 
     # Update
     os.system("git fetch && git pull")

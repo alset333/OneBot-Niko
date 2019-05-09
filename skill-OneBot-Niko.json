@@ -1420,12 +1420,12 @@
       "values": [
         {
           "type": "synonyms",
-          "value": "bacon",
+          "value": "pancake",
           "synonyms": []
         },
         {
           "type": "synonyms",
-          "value": "pancake",
+          "value": "bacon",
           "synonyms": []
         }
       ],
@@ -1480,19 +1480,9 @@
       "values": [
         {
           "type": "synonyms",
-          "value": "sleep",
+          "value": "cuddle",
           "synonyms": [
-            "sleep",
-            "slept"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "lift",
-          "synonyms": [
-            "pick up",
-            "picks up",
-            "lifts up"
+            "cuddles"
           ]
         },
         {
@@ -1500,6 +1490,14 @@
           "value": "hug",
           "synonyms": [
             "hugs"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "sleep",
+          "synonyms": [
+            "sleep",
+            "slept"
           ]
         },
         {
@@ -1512,12 +1510,15 @@
         },
         {
           "type": "synonyms",
-          "value": "cuddle",
+          "value": "lift",
           "synonyms": [
-            "cuddles"
+            "pick up",
+            "picks up",
+            "lifts up"
           ]
         }
-      ]
+      ],
+      "fuzzy_match": true
     },
     {
       "entity": "negative_and_positive",
@@ -1556,13 +1557,28 @@
             "semiautomatic",
             "munitions",
             "centerfire",
-            "🔫"
+            "🔫",
+            "knife",
+            "knives",
+            "stab",
+            "stabs"
           ]
         },
         {
           "type": "synonyms",
           "value": "swears",
           "synonyms": [
+            "nigga",
+            "skanky",
+            "boobies",
+            "nipples",
+            "booty",
+            "breasts",
+            "retard",
+            "niggas",
+            "niggers",
+            "mofos",
+            "motherfuckin",
             "effing",
             "dayum",
             "shitty",
@@ -1694,7 +1710,6 @@
             "nutbags",
             "tits",
             "titties",
-            "babes",
             "teabaggers",
             "nutjob",
             "horseshit",
@@ -1710,22 +1725,7 @@
             "shyt",
             "dickhead",
             "douche",
-            "fkn",
-            "nigga",
-            "skanky",
-            "boobies",
-            "nipples",
-            "booty",
-            "breasts",
-            "retard",
-            "niggas",
-            "niggers",
-            "mofos",
-            "motherfuckin",
-            "gay",
-            "gey",
-            "gei",
-            "gayy"
+            "fkn"
           ]
         }
       ],

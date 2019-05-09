@@ -71,7 +71,7 @@ update_channel_id_path = os.path.normpath("update_channel_id")
 if os.path.isfile(update_channel_id_path):
     update_channel_id = int(open(update_channel_id_path).read())
     os.remove(update_channel_id_path)
-    print("Chan id is", update_channel_id)
+    print("Update channel ID is", update_channel_id)
 else:
     update_channel_id = None
 

@@ -69,7 +69,7 @@ save_file = open(save_file_path, 'r+')  # Open the save file for writing
 
 update_channel_id_path = os.path.normpath("update_channel_id")
 if os.path.isfile(update_channel_id_path):
-    update_channel_id = int(open(update_channel_id_path, 'r').read())
+    update_channel_id = int(open(update_channel_id_path).read())
     os.remove(update_channel_id_path)
     print("Chan id is", update_channel_id)
 else:
@@ -226,15 +226,15 @@ async def update(ctx):
     await ctx.send(response)
 
     # save the ctx to a file temporarily so we can reply when the update is done
-    chan_out = open(update_channel_id_path, 'wb')
-    chan_out.write(str(message.channel.id).encode('utf-8'))
+    chan_out = open(update_channel_id_path, 'w')
+    chan_out.write(str(message.channel.id))
     chan_out.close()
+
+
 
     # Shut down the bot and save/close files
     save_context()
     await logout_bot_async()
-
-    exit()
 
     # Update
     os.system("git fetch && git pull")

@@ -99,6 +99,7 @@ def save_context():
 
 @bot.event
 async def on_ready():
+    global update_channel_id
     log('Niko has logged in as')
     log(bot.user.name)
     log(bot.user.id)
@@ -111,6 +112,8 @@ async def on_ready():
     if update_channel_id:
         channel = bot.get_channel(update_channel_id)
         await channel.send("[Update complete!]")
+        # In case we end up here again somehow (bot seemed to restart once) be sure it won't announce update again
+        update_channel_id = None
 
 
 @bot.command()

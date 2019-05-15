@@ -272,7 +272,7 @@ def get_response(message, contextVar):
 
     return lines, contextVar
 
-def send_response(lines, message):
+async def send_response(lines, message):
 
 
 
@@ -328,7 +328,7 @@ async def on_message(message):
     lines, contextVar = get_response(message, contextVar)
 
     # Send the response from Watson Assistant to the User as a reply to the message.
-    send_response(lines, message)
+    await send_response(lines, message)
 
     contexts[message.author.id] = contextVar  # Save their new context
 

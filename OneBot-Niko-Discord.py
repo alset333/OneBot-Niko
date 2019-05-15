@@ -23,7 +23,7 @@ from discord.ext import commands
 from discord import Game, Status
 import os, sys
 import WatsonAssistantV2Utility
-from time import sleep
+from time import sleep, time
 from Logger import log, close_log
 import json
 from concurrent.futures._base import CancelledError
@@ -301,7 +301,7 @@ async def on_message(message):
 
             # Sleep for typing duration (or just print it if debugging mode)
             seconds = line['time'] / 1000  # Convert from ms to s
-            sleep(seconds)
+            # sleep(seconds)
 
         elif rt == "option":
             log(line['title'])
@@ -312,7 +312,7 @@ async def on_message(message):
                 await reply(message, o['label'] + ": " + o['value']['input']['text'])
 
         # Short pause between anything, even if no 'typing'
-        sleep(0.1)
+        # sleep(0.1)
 
         log()  # Newline
 

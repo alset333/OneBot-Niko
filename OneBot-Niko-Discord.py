@@ -27,6 +27,7 @@ from time import sleep, time
 from Logger import log, close_log
 import json
 from concurrent.futures._base import CancelledError
+import asyncio
 
 VERSION = '2019-01-05'
 
@@ -61,7 +62,7 @@ logged_out = False
 # You can start a conversation in one and continue in another. Only one Niko per person!
 assistants = {}  # A dictionary matching each "message.author" to their "assistant" as {author : assistant}
 contexts = {}  # A dictionary matching each "message.author" to their "context" as {author : context}
-
+queues = {}  # A dictionary matching each "message.author" to their "queue" as {author : queue}
 
 # Load save data
 save_file_path = os.path.normpath('save_data.json')
@@ -255,23 +256,7 @@ async def update(ctx):
     os.execv(sys.executable, args)
 
 
-@bot.listen()
-async def on_message(message):
-    log("Message:", message)
-    log("Message content:", message.content)
-    if message.author.bot:  # If the bot sent the message
-        return  # Don't do anything with it
-
-    if message.content[0] == bot.command_prefix:  # If the message is a command
-        return  # Don't do anything with it
-
-    if message.author.id in contexts:  # If they have a context
-        log("they have a context")
-        contextVar = contexts[message.author.id]  # Use their context
-    else:
-        log(message.author.id, 'is not in', contexts)
-        contextVar = []  # Otherwise, use an empty one
-
+def get_response(message, contextVar):
     if message.author.id in assistants:  # If they already have an assistant
         log("they have an assistant")
         a = assistants[message.author.id]  # Use their assistant
@@ -284,6 +269,13 @@ async def on_message(message):
             lines, contextVar = a.message('', contextVar)  # Then send the welcome trigger
         else:  # Otherwise
             lines, contextVar = a.message(message.content, contextVar)  # send their message
+
+    return lines, contextVar
+
+def send_response(lines, message):
+
+
+
 
     for line in lines:
         rt = line["response_type"]
@@ -302,6 +294,7 @@ async def on_message(message):
             # Sleep for typing duration (or just print it if debugging mode)
             seconds = line['time'] / 1000  # Convert from ms to s
             # sleep(seconds)
+            # await asyncio.sleep(seconds)
 
         elif rt == "option":
             log(line['title'])
@@ -311,10 +304,31 @@ async def on_message(message):
                 log(o['label'], ": ", o['value']['input']['text'], sep="")
                 await reply(message, o['label'] + ": " + o['value']['input']['text'])
 
-        # Short pause between anything, even if no 'typing'
-        # sleep(0.1)
-
         log()  # Newline
+
+
+@bot.listen()
+async def on_message(message):
+    log("Message:", message)
+    log("Message content:", message.content)
+    if message.author.bot:  # If the bot sent the message
+        return  # Don't do anything with it
+
+    if message.content[0] == bot.command_prefix:  # If the message is a command
+        return  # Don't do anything with it
+
+    if message.author.id in contexts:  # If they have a context
+        log("they have a context")
+        contextVar = contexts[message.author.id]  # Use their context
+    else:
+        log(message.author.id, 'is not in', contexts)
+        contextVar = []  # Otherwise, use an empty one
+
+    # Use the user's message to get a response from Watson Assistant. Update the context.
+    lines, contextVar = get_response(message, contextVar)
+
+    # Send the response from Watson Assistant to the User as a reply to the message.
+    send_response(lines, message)
 
     contexts[message.author.id] = contextVar  # Save their new context
 

@@ -28,6 +28,7 @@ from Logger import log, close_log
 import json
 from concurrent.futures._base import CancelledError
 import asyncio
+from datetime import datetime, timezone
 
 VERSION = '2019-01-05'
 
@@ -63,6 +64,8 @@ logged_out = False
 assistants = {}  # A dictionary matching each "message.author" to their "assistant" as {author : assistant}
 contexts = {}  # A dictionary matching each "message.author" to their "context" as {author : context}
 queues = {}  # A dictionary matching each "message.author" to their "queue" as {author : queue}
+
+GROUP_TIME = 5  # How long to keep the queue grouped
 
 # Load save data
 save_file_path = os.path.normpath('save_data.json')
@@ -234,8 +237,6 @@ async def update(ctx):
     chan_out.write(str(message.channel.id))
     chan_out.close()
 
-
-
     # Shut down the bot and save/close files
     save_context()
     await logout_bot_async()
@@ -272,10 +273,8 @@ def get_response(message, contextVar):
 
     return lines, contextVar
 
+
 async def send_response(lines, message):
-
-
-
 
     for line in lines:
         rt = line["response_type"]
@@ -308,7 +307,7 @@ async def send_response(lines, message):
 
 
 @bot.listen()
-async def on_message(message):
+async def on_message(message, recursed=False):
     log("Message:", message)
     log("Message content:", message.content)
     if message.author.bot:  # If the bot sent the message
@@ -324,21 +323,51 @@ async def on_message(message):
         log(message.author.id, 'is not in', contexts)
         contextVar = []  # Otherwise, use an empty one
 
-    # Use the user's message to get a response from Watson Assistant. Update the context.
-    lines, contextVar = get_response(message, contextVar)
+    if message.author.id in queues:  # If they have a queue
+        log("they have a queue")
+        queue = queues[message.author.id]   # Use their queue
+        if not recursed:  # If we haven't done this message before
+            queue += [message] #  add this message to the queue
+            return  # If there's a queue going and we're not here on recursion, leave now
+    else:
+        log(message.author.id, 'is not in', queues)
+        queue = [message]  # Set the queue with this message
 
-    # Send the response from Watson Assistant to the User as a reply to the message.
-    await send_response(lines, message)
+    queues[message.author.id] = queue  # Save queue back into dictionary
 
-    contexts[message.author.id] = contextVar  # Save their new context
+
+    oldest_message_time = queue[0].created_at
+    latest_message_time = queue[-1].created_at
+
+    current_time = datetime.now(timezone.utc).replace(tzinfo=None)
+
+    seconds_elapsed = (current_time - oldest_message_time).total_seconds()
+    print(seconds_elapsed)
+
+    if seconds_elapsed > GROUP_TIME:
+        total_content = ""
+        for msg in queue:
+            total_content += msg.content + " "
+        message.content = total_content
+
+        print("Full content to send is", total_content, "Recursive is", recursed)
+
+        # Use the user's message to get a response from Watson Assistant. Update the context.
+        lines, contextVar = get_response(message, contextVar)
+
+        # Send the response from Watson Assistant to the User as a reply to the message.
+        await send_response(lines, message)
+
+        contexts[message.author.id] = contextVar  # Save their new context
+
+        # Once we're done sending, remove entirely from queue
+        del queues[message.author.id]
+    else:
+        print("Not enough time to send yet.")
+        await asyncio.sleep(GROUP_TIME - seconds_elapsed)
+        await on_message(message, recursed=True)
 
     log("Contexts:\n", contextVar, contexts)
-
-    # if message.content.startswith('!hello'):
-    #     await message.channel.send("test")
-    # content = 'confused cat noises'
-    # msg = '{0.mention}, {1}'.format(message.author, content)
-    # await message.channel.send(msg)
 
 
 async def reply(message, response):

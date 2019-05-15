@@ -106,7 +106,10 @@ class WatsonAssistant:
         """
         End the session
         """
-        self.assistant.delete_session(self.assistant_id, self.session_id)
+        try:
+            self.assistant.delete_session(self.assistant_id, self.session_id)
+        except WatsonApiException:
+            log("Problem with disconnecting an Assistant. Ignoring.")
         log("Disconnected")
 
     def message(self, text, context, loopAgain=True):

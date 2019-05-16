@@ -215,6 +215,18 @@ async def logout_bot_async():
 
 
 @bot.command()
+async def embed_test(ctx, desc="Do you think it would be better if I talked like this?"):
+
+    from discord import embeds, colour as color
+    em = embeds.Embed(color=0xFFDE29,
+                      url='http://example.com',
+                      description=desc)
+    em.set_thumbnail(url="https://vignette.wikia.nocookie.net/oneshot/images/0/02/Niko.png/")
+    em.set_footer(text="Ignore this for now: " + str(ctx.message.author.id))
+
+    await ctx.send(embed=em)
+
+@bot.command()
 @commands.has_permissions(administrator=True)
 async def update(ctx):
     # Get information about the command

@@ -1458,11 +1458,6 @@
       "values": [
         {
           "type": "synonyms",
-          "value": "sheep",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
           "value": "cat",
           "synonyms": [
             "cats",
@@ -1471,6 +1466,11 @@
             "feline",
             "gato"
           ]
+        },
+        {
+          "type": "synonyms",
+          "value": "sheep",
+          "synonyms": []
         }
       ],
       "fuzzy_match": true
@@ -1480,16 +1480,11 @@
       "values": [
         {
           "type": "synonyms",
-          "value": "cuddle",
+          "value": "lift",
           "synonyms": [
-            "cuddles"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "hug",
-          "synonyms": [
-            "hugs"
+            "pick up",
+            "picks up",
+            "lifts up"
           ]
         },
         {
@@ -1510,11 +1505,16 @@
         },
         {
           "type": "synonyms",
-          "value": "lift",
+          "value": "cuddle",
           "synonyms": [
-            "pick up",
-            "picks up",
-            "lifts up"
+            "cuddles"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "hug",
+          "synonyms": [
+            "hugs"
           ]
         }
       ],
@@ -1523,47 +1523,6 @@
     {
       "entity": "negative_and_positive",
       "values": [
-        {
-          "type": "synonyms",
-          "value": "dangerous",
-          "synonyms": [
-            "gun",
-            "guns",
-            "firearms",
-            "pistol",
-            "rifle",
-            "handgun",
-            "weapons",
-            "shotguns",
-            "revolver",
-            "rifles",
-            "firearm",
-            "handguns",
-            "weapon",
-            "shotgun",
-            "pistols",
-            "revolvers",
-            "sidearm",
-            "ammunition",
-            "bomb",
-            "bombs",
-            "ammo",
-            "carbines",
-            "weaponry",
-            "muskets",
-            "glock",
-            "ammunitions",
-            "calibers",
-            "semiautomatic",
-            "munitions",
-            "centerfire",
-            "🔫",
-            "knife",
-            "knives",
-            "stab",
-            "stabs"
-          ]
-        },
         {
           "type": "synonyms",
           "value": "swears",
@@ -1715,7 +1674,6 @@
             "horseshit",
             "dimwit",
             "lmao",
-            "boobs",
             "dirtbag",
             "wtf",
             "chick",
@@ -1725,7 +1683,57 @@
             "shyt",
             "dickhead",
             "douche",
-            "fkn"
+            "fkn",
+            "boob",
+            "boobs"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "not_swears",
+          "synonyms": [
+            "boop"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "dangerous",
+          "synonyms": [
+            "gun",
+            "guns",
+            "firearms",
+            "pistol",
+            "rifle",
+            "handgun",
+            "weapons",
+            "shotguns",
+            "revolver",
+            "rifles",
+            "firearm",
+            "handguns",
+            "weapon",
+            "shotgun",
+            "pistols",
+            "revolvers",
+            "sidearm",
+            "ammunition",
+            "bomb",
+            "bombs",
+            "ammo",
+            "carbines",
+            "weaponry",
+            "muskets",
+            "glock",
+            "ammunitions",
+            "calibers",
+            "semiautomatic",
+            "munitions",
+            "centerfire",
+            "🔫",
+            "knife",
+            "knives",
+            "stab",
+            "stabs"
           ]
         }
       ],
@@ -1736,25 +1744,35 @@
       "values": [
         {
           "type": "synonyms",
-          "value": "location",
+          "value": "name",
           "synonyms": [
-            "place",
-            "house",
-            "village",
-            "home",
-            "houses",
-            "locations",
-            "town",
-            "apartment",
-            "homes",
-            "villages",
-            "places",
-            "bedroom",
-            "mansion",
-            "bungalow",
-            "Where",
-            "what place",
-            "where is"
+            "names",
+            "surname"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "gender",
+          "synonyms": [
+            "sex",
+            "orientation",
+            "identity",
+            "male",
+            "female",
+            "boy",
+            "girl",
+            "man",
+            "woman",
+            "girls",
+            "guy",
+            "women",
+            "lady",
+            "wife",
+            "kid",
+            "sexual",
+            "men",
+            "boys",
+            "chick"
           ]
         },
         {
@@ -1788,41 +1806,31 @@
         },
         {
           "type": "synonyms",
-          "value": "gender",
-          "synonyms": [
-            "sex",
-            "orientation",
-            "identity",
-            "male",
-            "female",
-            "boy",
-            "girl",
-            "man",
-            "woman",
-            "girls",
-            "guy",
-            "women",
-            "lady",
-            "wife",
-            "kid",
-            "sexual",
-            "men",
-            "boys",
-            "chick"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "name",
-          "synonyms": [
-            "names",
-            "surname"
-          ]
-        },
-        {
-          "type": "synonyms",
           "value": "species",
           "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "location",
+          "synonyms": [
+            "place",
+            "house",
+            "village",
+            "home",
+            "houses",
+            "locations",
+            "town",
+            "apartment",
+            "homes",
+            "villages",
+            "places",
+            "bedroom",
+            "mansion",
+            "bungalow",
+            "Where",
+            "what place",
+            "where is"
+          ]
         }
       ],
       "fuzzy_match": true
@@ -1830,30 +1838,6 @@
     {
       "entity": "People",
       "values": [
-        {
-          "type": "synonyms",
-          "value": "Niko",
-          "synonyms": [
-            "niko",
-            "you",
-            "your",
-            "nico",
-            "yourself"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "penguin",
-          "synonyms": [
-            "the penguin",
-            "🐧"
-          ]
-        },
-        {
-          "type": "synonyms",
-          "value": "Alula",
-          "synonyms": []
-        },
         {
           "type": "synonyms",
           "value": "Calamus",
@@ -1878,6 +1862,30 @@
             "mamma",
             "moms",
             "mommies"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Niko",
+          "synonyms": [
+            "niko",
+            "you",
+            "your",
+            "nico",
+            "yourself"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Alula",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "penguin",
+          "synonyms": [
+            "the penguin",
+            "🐧"
           ]
         }
       ],
@@ -1948,13 +1956,6 @@
       "values": [
         {
           "type": "synonyms",
-          "value": "Miss",
-          "synonyms": [
-            "missed"
-          ]
-        },
-        {
-          "type": "synonyms",
           "value": "remember",
           "synonyms": []
         },
@@ -1962,6 +1963,13 @@
           "type": "synonyms",
           "value": "sure",
           "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Miss",
+          "synonyms": [
+            "missed"
+          ]
         }
       ],
       "fuzzy_match": true
@@ -4302,7 +4310,7 @@
           "mcr": true
         }
       },
-      "conditions": "@negative_and_positive",
+      "conditions": "@negative_and_positive && @negative_and_positive != 'not_swears'",
       "digress_in": "does_not_return",
       "dialog_node": "node_23_1555085096210",
       "digress_out": "allow_all",

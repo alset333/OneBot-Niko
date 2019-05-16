@@ -5,55 +5,55 @@
       "intent": "Bot_Control_Clarification",
       "examples": [
         {
-          "text": "What do you mean?"
-        },
-        {
-          "text": "Can you say that again please?"
-        },
-        {
-          "text": "Come again?"
-        },
-        {
-          "text": "Explains"
-        },
-        {
-          "text": "I did not quite understand what you gave me"
-        },
-        {
-          "text": "I didn't catch that"
-        },
-        {
-          "text": "I didn't quite understand what you said"
+          "text": "I don't get it"
         },
         {
           "text": "I didn't understand that properly"
         },
         {
-          "text": "I don't get it"
+          "text": "I didn't quite understand what you said"
         },
         {
-          "text": "I don't understand what you're saying"
+          "text": "I didn't catch that"
         },
         {
-          "text": "I don't understand"
+          "text": "I did not quite understand what you gave me"
         },
         {
-          "text": "I need more information"
+          "text": "Explains"
         },
         {
-          "text": "Let's try to say that again more clearly, shall we?"
+          "text": "Come again?"
         },
         {
-          "text": "What are you referring to?"
+          "text": "Can you say that again please?"
         },
         {
-          "text": "What are you saying?"
+          "text": "What do you mean?"
+        },
+        {
+          "text": "What do you mean by that?"
         },
         {
           "text": "What are you talking about?"
         },
         {
-          "text": "What do you mean by that?"
+          "text": "What are you saying?"
+        },
+        {
+          "text": "What are you referring to?"
+        },
+        {
+          "text": "Let's try to say that again more clearly, shall we?"
+        },
+        {
+          "text": "I need more information"
+        },
+        {
+          "text": "I don't understand"
+        },
+        {
+          "text": "I don't understand what you're saying"
         }
       ],
       "description": "Repeat or clarify last statement."
@@ -65,25 +65,25 @@
           "text": "I am well"
         },
         {
-          "text": "what is my name"
-        },
-        {
           "text": "who am I?"
         },
         {
-          "text": "I am good"
+          "text": "what is my name"
         },
         {
-          "text": "Am I a cat?"
-        },
-        {
-          "text": "am I the cat?"
+          "text": "am i okay"
         },
         {
           "text": "am I cat"
         },
         {
-          "text": "am i okay"
+          "text": "am I the cat?"
+        },
+        {
+          "text": "Am I a cat?"
+        },
+        {
+          "text": "I am good"
         }
       ],
       "description": ""
@@ -92,25 +92,25 @@
       "intent": "apology",
       "examples": [
         {
-          "text": "please forgive me"
-        },
-        {
-          "text": "I'm sorry"
-        },
-        {
-          "text": "sorry"
-        },
-        {
-          "text": "my bad"
-        },
-        {
-          "text": "sorry about that"
+          "text": "my apologies"
         },
         {
           "text": "apologies"
         },
         {
-          "text": "my apologies"
+          "text": "I'm sorry"
+        },
+        {
+          "text": "please forgive me"
+        },
+        {
+          "text": "sorry"
+        },
+        {
+          "text": "sorry about that"
+        },
+        {
+          "text": "my bad"
         }
       ]
     },
@@ -118,55 +118,22 @@
       "intent": "Ask_Niko_Facts",
       "examples": [
         {
-          "text": "when were you born"
+          "text": "are you a girl"
         },
         {
-          "text": "how tall are you"
-        },
-        {
-          "text": "are you nonbinary"
-        },
-        {
-          "text": "are you a cat or person"
-        },
-        {
-          "text": "whats your name"
-        },
-        {
-          "text": "how old are you"
-        },
-        {
-          "text": "What is your name?"
+          "text": "what sex are you"
         },
         {
           "text": "what is your name"
         },
         {
-          "text": "what gender are you"
-        },
-        {
-          "text": "are you a girl"
-        },
-        {
-          "text": "are you a boy"
-        },
-        {
-          "text": "what animal are you"
-        },
-        {
-          "text": "are you a cat"
-        },
-        {
-          "text": "are you a person or a cat"
+          "text": "who are you"
         },
         {
           "text": "Do you like birds?"
         },
         {
-          "text": "who are you"
-        },
-        {
-          "text": "what sex are you"
+          "text": "Do you remember me?"
         },
         {
           "text": "remember mama?"
@@ -178,7 +145,40 @@
           "text": "Where do you live?"
         },
         {
-          "text": "Do you remember me?"
+          "text": "how old are you"
+        },
+        {
+          "text": "whats your name"
+        },
+        {
+          "text": "are you a cat or person"
+        },
+        {
+          "text": "are you nonbinary"
+        },
+        {
+          "text": "how tall are you"
+        },
+        {
+          "text": "when were you born"
+        },
+        {
+          "text": "are you a person or a cat"
+        },
+        {
+          "text": "What is your name?"
+        },
+        {
+          "text": "are you a cat"
+        },
+        {
+          "text": "what animal are you"
+        },
+        {
+          "text": "are you a boy"
+        },
+        {
+          "text": "what gender are you"
         }
       ],
       "description": "Facts and attributes about Niko"
@@ -187,10 +187,10 @@
       "intent": "express_love",
       "examples": [
         {
-          "text": "I love you"
+          "text": "I love them"
         },
         {
-          "text": "I love them"
+          "text": "I love you"
         },
         {
           "text": "I love that"
@@ -199,13 +199,25 @@
       "description": ""
     },
     {
-      "intent": "hug",
+      "intent": "action_to_Niko",
       "examples": [
         {
-          "text": "hug"
+          "text": "*Cuddle*"
         },
         {
-          "text": "*Cuddle*"
+          "text": "Nuzzles"
+        },
+        {
+          "text": "huggles"
+        },
+        {
+          "text": "huggle"
+        },
+        {
+          "text": "hugs you"
+        },
+        {
+          "text": "*hugs you*"
         },
         {
           "text": "I want to hug"
@@ -220,31 +232,31 @@
           "text": "*gives you a hug*"
         },
         {
-          "text": "*hugs you*"
-        },
-        {
-          "text": "hugs you"
-        },
-        {
           "text": "_hugs_"
         },
         {
           "text": "*hug*"
+        },
+        {
+          "text": "hug"
         }
       ],
-      "description": "Player hugs Niko, or wants a hug"
+      "description": "Player hugs Niko, or wants a hug. Other actions too!"
     },
     {
       "intent": "Bot_Control_Unsure",
       "examples": [
         {
-          "text": "To be honest, I m really not sure"
+          "text": "I m not certain I get what you re saying"
+        },
+        {
+          "text": "maybe"
         },
         {
           "text": "You got me"
         },
         {
-          "text": "maybe"
+          "text": "To be honest, I m really not sure"
         },
         {
           "text": "No idea"
@@ -259,22 +271,19 @@
           "text": "I m not sure what will make you happy"
         },
         {
-          "text": "I m not certain I get what you re saying"
-        },
-        {
-          "text": "I don t know what you need"
-        },
-        {
-          "text": "I don t know what you want"
-        },
-        {
-          "text": "I have no idea, actually"
+          "text": "I haven't got a clue"
         },
         {
           "text": "I have no idea what you are looking for"
         },
         {
-          "text": "I haven't got a clue"
+          "text": "I have no idea, actually"
+        },
+        {
+          "text": "I don t know what you want"
+        },
+        {
+          "text": "I don t know what you need"
         }
       ],
       "description": "Indicate no definite answer to a question."
@@ -295,25 +304,46 @@
       "intent": "Bot_Control_Approve_Response",
       "examples": [
         {
-          "text": "All right"
-        },
-        {
-          "text": "Got it"
-        },
-        {
-          "text": "For sure!"
+          "text": "Yes"
         },
         {
           "text": "Correct"
         },
         {
-          "text": "Affirmative. That's what I'm looking for."
+          "text": "For sure!"
         },
         {
-          "text": "You read my mind"
+          "text": "Got it"
         },
         {
-          "text": "Yes"
+          "text": "Great"
+        },
+        {
+          "text": "I agree"
+        },
+        {
+          "text": "That is what I need"
+        },
+        {
+          "text": "I like that"
+        },
+        {
+          "text": "Indeed!"
+        },
+        {
+          "text": "Sure thing!"
+        },
+        {
+          "text": "Sweet"
+        },
+        {
+          "text": "That is precisely what I was looking for"
+        },
+        {
+          "text": "That is right"
+        },
+        {
+          "text": "That is the proper response."
         },
         {
           "text": "mhm"
@@ -334,34 +364,13 @@
           "text": "That's exactly what I want"
         },
         {
-          "text": "That is what I need"
+          "text": "You read my mind"
         },
         {
-          "text": "That is the proper response."
+          "text": "Affirmative. That's what I'm looking for."
         },
         {
-          "text": "That is right"
-        },
-        {
-          "text": "That is precisely what I was looking for"
-        },
-        {
-          "text": "Sweet"
-        },
-        {
-          "text": "Sure thing!"
-        },
-        {
-          "text": "Indeed!"
-        },
-        {
-          "text": "I like that"
-        },
-        {
-          "text": "I agree"
-        },
-        {
-          "text": "Great"
+          "text": "All right"
         }
       ],
       "description": "Acknowledge that the response satisfies a question."
@@ -370,13 +379,31 @@
       "intent": "General_Negative_Feedback",
       "examples": [
         {
-          "text": "You are having delusions"
+          "text": "You do not seem smart"
+        },
+        {
+          "text": "ree"
+        },
+        {
+          "text": "dye"
+        },
+        {
+          "text": "I do not like you"
         },
         {
           "text": "I hate this!"
         },
         {
           "text": "I hate you"
+        },
+        {
+          "text": "It is annoying"
+        },
+        {
+          "text": "Quit annoying me"
+        },
+        {
+          "text": "You are having delusions"
         },
         {
           "text": "Why are you stupid?"
@@ -395,9 +422,6 @@
         },
         {
           "text": "Robots are boring"
-        },
-        {
-          "text": "You do not seem smart"
         },
         {
           "text": "You're really frustrating"
@@ -419,21 +443,6 @@
         },
         {
           "text": "Hate you"
-        },
-        {
-          "text": "I do not like you"
-        },
-        {
-          "text": "dye"
-        },
-        {
-          "text": "ree"
-        },
-        {
-          "text": "It is annoying"
-        },
-        {
-          "text": "Quit annoying me"
         }
       ],
       "description": "Express unfavorable feedback."
@@ -445,10 +454,10 @@
           "text": "Bwhahaha"
         },
         {
-          "text": "HAHAHAHAHAHAHAHAHA"
+          "text": "HAHAHAHAHAHAHAHAHAHAHA"
         },
         {
-          "text": "HAHAHAHAHAHAHAHAHAHAHA"
+          "text": "HAHAHAHAHAHAHAHAHA"
         }
       ],
       "description": "Mocking or laughing at the bot"
@@ -460,13 +469,13 @@
           "text": "That's good"
         },
         {
-          "text": "You'll be okay"
-        },
-        {
           "text": "It will be okay"
         },
         {
           "text": "Aww, that's okay"
+        },
+        {
+          "text": "You'll be okay"
         }
       ],
       "description": "Player reassuring Niko"
@@ -475,31 +484,22 @@
       "intent": "Bot_Control_Change_Subject",
       "examples": [
         {
-          "text": "A different matter"
-        },
-        {
-          "text": "Another thing"
-        },
-        {
-          "text": "Can we talk about something else?"
-        },
-        {
-          "text": "Change topic"
+          "text": "Discuss something else"
         },
         {
           "text": "Chat about something else"
         },
         {
-          "text": "Discuss something else"
+          "text": "Change topic"
         },
         {
-          "text": "Help me with this other question"
+          "text": "Can we talk about something else?"
         },
         {
-          "text": "Here is another issue"
+          "text": "Another thing"
         },
         {
-          "text": "I have one more question"
+          "text": "A different matter"
         },
         {
           "text": "Let us change the topic"
@@ -509,6 +509,15 @@
         },
         {
           "text": "Talk about something else"
+        },
+        {
+          "text": "I have one more question"
+        },
+        {
+          "text": "Here is another issue"
+        },
+        {
+          "text": "Help me with this other question"
         }
       ],
       "description": "Change to a different topic."
@@ -517,16 +526,16 @@
       "intent": "Bot_Control_Start_Over",
       "examples": [
         {
-          "text": "Back to the beginning"
+          "text": "Begin over!"
         },
         {
           "text": "Actually, let's start over"
         },
         {
-          "text": "Back to the top"
+          "text": "Back to the beginning"
         },
         {
-          "text": "Begin over!"
+          "text": "Back to the top"
         },
         {
           "text": "Can we please start over?"
@@ -583,7 +592,10 @@
       "intent": "Bot_Control_Confirm_Presence",
       "examples": [
         {
-          "text": "Did you hear what I said?"
+          "text": "Am I talking to someone?"
+        },
+        {
+          "text": "Are you on?"
         },
         {
           "text": "Have I lost you?"
@@ -607,28 +619,25 @@
           "text": "You around?"
         },
         {
-          "text": "Are you leaving me?"
-        },
-        {
-          "text": "Are you on?"
-        },
-        {
-          "text": "Are you still around?"
-        },
-        {
-          "text": "Are you still here with me?"
+          "text": "Did you go somewhere?"
         },
         {
           "text": "Are you there?"
         },
         {
-          "text": "Am I talking to someone?"
+          "text": "Are you still here with me?"
+        },
+        {
+          "text": "Are you still around?"
+        },
+        {
+          "text": "Are you leaving me?"
         },
         {
           "text": "Anyone there?"
         },
         {
-          "text": "Did you go somewhere?"
+          "text": "Did you hear what I said?"
         }
       ],
       "description": "Ask the bot to indicate that it is available."
@@ -652,17 +661,30 @@
     },
     {
       "intent": "playful",
-      "examples": [],
+      "examples": [
+        {
+          "text": "confused cat noises"
+        }
+      ],
       "description": ""
     },
     {
       "intent": "Bot_Control_Reject_Response",
       "examples": [
         {
-          "text": "I disagree"
+          "text": "You did not understand what I said"
         },
         {
           "text": "Bad response"
+        },
+        {
+          "text": "Wrong response"
+        },
+        {
+          "text": "That was wrong, try again"
+        },
+        {
+          "text": "That was not my intent"
         },
         {
           "text": "That sounds like the wrong response"
@@ -686,28 +708,7 @@
           "text": "It is not what I was looking for"
         },
         {
-          "text": "You're misunderstanding me"
-        },
-        {
-          "text": "You didn't understand me"
-        },
-        {
-          "text": "You did not understand what I said"
-        },
-        {
-          "text": "That was not my intent"
-        },
-        {
-          "text": "That was wrong, try again"
-        },
-        {
-          "text": "Wrong response"
-        },
-        {
           "text": "It is not what I want"
-        },
-        {
-          "text": "You did not understand what I asked"
         },
         {
           "text": "I wasn't looking for that"
@@ -720,6 +721,18 @@
         },
         {
           "text": "I do not think it is the answer?"
+        },
+        {
+          "text": "I disagree"
+        },
+        {
+          "text": "You did not understand what I asked"
+        },
+        {
+          "text": "You didn't understand me"
+        },
+        {
+          "text": "You're misunderstanding me"
         }
       ],
       "description": "Indicate the bot's response does not address a question."
@@ -728,16 +741,7 @@
       "intent": "Bot_Control_Standby",
       "examples": [
         {
-          "text": "Keep holding"
-        },
-        {
-          "text": "Can you wait for me?"
-        },
-        {
-          "text": "Give me a few minutes to get together"
-        },
-        {
-          "text": "Give me a moment"
+          "text": "Be patient with me"
         },
         {
           "text": "Give me a second"
@@ -764,6 +768,9 @@
           "text": "Just hold on"
         },
         {
+          "text": "Keep holding"
+        },
+        {
           "text": "Let me see"
         },
         {
@@ -782,10 +789,16 @@
           "text": "Be back later"
         },
         {
-          "text": "Be patient with me"
+          "text": "Can you give me a moment?"
         },
         {
-          "text": "Can you give me a moment?"
+          "text": "Can you wait for me?"
+        },
+        {
+          "text": "Give me a few minutes to get together"
+        },
+        {
+          "text": "Give me a moment"
         }
       ],
       "description": "Indicate a delay in providing input to the bot."
@@ -794,13 +807,13 @@
       "intent": "General_Greetings",
       "examples": [
         {
-          "text": "What's new?"
-        },
-        {
-          "text": "Looking good eve"
-        },
-        {
           "text": "How r u?"
+        },
+        {
+          "text": "Hello Agent"
+        },
+        {
+          "text": "Hello I am looking for some help here"
         },
         {
           "text": "Hello"
@@ -851,16 +864,16 @@
           "text": "What's up?"
         },
         {
-          "text": "Hello I am looking for some help here"
-        },
-        {
-          "text": "Hello Agent"
-        },
-        {
-          "text": "Have you been well?"
+          "text": "What's new?"
         },
         {
           "text": "Ok take me back"
+        },
+        {
+          "text": "Looking good eve"
+        },
+        {
+          "text": "Have you been well?"
         },
         {
           "text": "Greetings"
@@ -899,6 +912,9 @@
       "intent": "goodnight",
       "examples": [
         {
+          "text": "sweet dreams"
+        },
+        {
           "text": "Good night, Niko"
         },
         {
@@ -906,9 +922,6 @@
         },
         {
           "text": "sleep well"
-        },
-        {
-          "text": "sweet dreams"
         },
         {
           "text": "gn"
@@ -937,19 +950,19 @@
       "intent": "Ask_Niko_Feeling",
       "examples": [
         {
-          "text": "Did you miss your mama?"
-        },
-        {
-          "text": "slept well?"
-        },
-        {
-          "text": "How are you?"
+          "text": "Did you sleep well last night?"
         },
         {
           "text": "How have you been?"
         },
         {
-          "text": "Did you sleep well last night?"
+          "text": "How are you?"
+        },
+        {
+          "text": "Did you miss your mama?"
+        },
+        {
+          "text": "slept well?"
         }
       ],
       "description": "User asks Niko how do you feel, how are you, etc"
@@ -958,12 +971,6 @@
       "intent": "aww",
       "examples": [
         {
-          "text": "awwww"
-        },
-        {
-          "text": "aw"
-        },
-        {
           "text": "aawwww"
         },
         {
@@ -971,6 +978,12 @@
         },
         {
           "text": "awww"
+        },
+        {
+          "text": "awwww"
+        },
+        {
+          "text": "aw"
         }
       ],
       "description": ""
@@ -979,67 +992,28 @@
       "intent": "General_Ending",
       "examples": [
         {
-          "text": "Bye bye"
-        },
-        {
-          "text": "Thanks, bye!"
-        },
-        {
-          "text": "Im done"
-        },
-        {
-          "text": "Im good thank you"
-        },
-        {
-          "text": "Hey bot go away"
-        },
-        {
-          "text": "I'm leaving now"
-        },
-        {
-          "text": "It was nice chatting with you"
-        },
-        {
-          "text": "Ok goodbye"
-        },
-        {
-          "text": "See you later"
-        },
-        {
-          "text": "I am leaving"
-        },
-        {
-          "text": "I am out of here"
-        },
-        {
-          "text": "I d like to stop doing this"
-        },
-        {
-          "text": "I have got to go"
-        },
-        {
-          "text": "I want to quit"
-        },
-        {
-          "text": "Time to go"
-        },
-        {
-          "text": "That's everything"
-        },
-        {
-          "text": "That is all"
-        },
-        {
-          "text": "See you"
-        },
-        {
           "text": "Shut up"
         },
         {
-          "text": "Thanks very much, bye!"
+          "text": "Stop doing this"
+        },
+        {
+          "text": "Stop talking to me"
+        },
+        {
+          "text": "Thank you for your time"
+        },
+        {
+          "text": "Have a nice day?"
+        },
+        {
+          "text": "Goodbye"
         },
         {
           "text": "Good. bye."
+        },
+        {
+          "text": "Going now"
         },
         {
           "text": "Go off"
@@ -1069,25 +1043,64 @@
           "text": "Bye now"
         },
         {
-          "text": "Goodbye"
+          "text": "Bye bye"
         },
         {
-          "text": "Going now"
+          "text": "Thanks, bye!"
+        },
+        {
+          "text": "Thanks very much, bye!"
+        },
+        {
+          "text": "That is all"
+        },
+        {
+          "text": "That's everything"
+        },
+        {
+          "text": "Time to go"
+        },
+        {
+          "text": "I want to quit"
+        },
+        {
+          "text": "I have got to go"
+        },
+        {
+          "text": "I d like to stop doing this"
+        },
+        {
+          "text": "I am out of here"
+        },
+        {
+          "text": "I am leaving"
+        },
+        {
+          "text": "Hey bot go away"
+        },
+        {
+          "text": "See you"
+        },
+        {
+          "text": "See you later"
+        },
+        {
+          "text": "Ok goodbye"
+        },
+        {
+          "text": "It was nice chatting with you"
+        },
+        {
+          "text": "I'm leaving now"
+        },
+        {
+          "text": "Im good thank you"
+        },
+        {
+          "text": "Im done"
         },
         {
           "text": "I'm done"
-        },
-        {
-          "text": "Stop doing this"
-        },
-        {
-          "text": "Stop talking to me"
-        },
-        {
-          "text": "Thank you for your time"
-        },
-        {
-          "text": "Have a nice day?"
         }
       ],
       "description": "End the conversation."
@@ -1096,10 +1109,10 @@
       "intent": "threaten",
       "examples": [
         {
-          "text": "shoot"
+          "text": "I'll hurt you"
         },
         {
-          "text": "I'll hurt you"
+          "text": "shoot"
         }
       ],
       "description": ""
@@ -1108,13 +1121,13 @@
       "intent": "General_Human_or_Bot",
       "examples": [
         {
-          "text": "Am I chatting with a human?"
+          "text": "Am I talking to a person or am I talking to an AI?"
         },
         {
-          "text": "Is this a computer?"
+          "text": "Tell me, are you a human or no?"
         },
         {
-          "text": "How can you prove you are a human?"
+          "text": "Are you a human or a bot?"
         },
         {
           "text": "Are you real?"
@@ -1126,22 +1139,22 @@
           "text": "Are you even real?"
         },
         {
-          "text": "Are you a robot?"
-        },
-        {
-          "text": "Am I talking to a person or am I talking to an AI?"
-        },
-        {
           "text": "Am I talking to a Bot?"
         },
         {
           "text": "Am I talking to Watson?"
         },
         {
-          "text": "Tell me, are you a human or no?"
+          "text": "Am I chatting with a human?"
         },
         {
-          "text": "Are you a human or a bot?"
+          "text": "Are you a robot?"
+        },
+        {
+          "text": "Is this a computer?"
+        },
+        {
+          "text": "How can you prove you are a human?"
         }
       ],
       "description": "Ask if speaking to a human or a bot."
@@ -1150,7 +1163,7 @@
       "intent": "Ask_World_Facts",
       "examples": [
         {
-          "text": "hi Geopolitical"
+          "text": "What's in the sky"
         },
         {
           "text": "What do you think about Geopolitical"
@@ -1159,7 +1172,7 @@
           "text": "Geopolitical"
         },
         {
-          "text": "What's in the sky"
+          "text": "hi Geopolitical"
         }
       ]
     },
@@ -1167,25 +1180,58 @@
       "intent": "hehe",
       "examples": [
         {
-          "text": "heh"
-        },
-        {
-          "text": "hehe"
+          "text": "haha"
         },
         {
           "text": "😂"
         },
         {
-          "text": "haha"
+          "text": "lol"
         },
         {
-          "text": "lol"
+          "text": "heh"
+        },
+        {
+          "text": "hehe"
         }
       ]
     },
     {
       "intent": "General_Positive_Feedback",
       "examples": [
+        {
+          "text": "You are the best"
+        },
+        {
+          "text": "Brilliant!"
+        },
+        {
+          "text": "Can't believe you are that good"
+        },
+        {
+          "text": "How cool is this?"
+        },
+        {
+          "text": "I like what you did there! :)"
+        },
+        {
+          "text": "I'm looking forward to working with you again! :)"
+        },
+        {
+          "text": "Love your work"
+        },
+        {
+          "text": "Ok thank you"
+        },
+        {
+          "text": "You've been so helpful :)"
+        },
+        {
+          "text": "This is good"
+        },
+        {
+          "text": "This is great"
+        },
         {
           "text": "This is so cool"
         },
@@ -1194,9 +1240,6 @@
         },
         {
           "text": "You are great"
-        },
-        {
-          "text": "You are the best"
         },
         {
           "text": "You are wonderful"
@@ -1224,36 +1267,6 @@
         },
         {
           "text": "neato"
-        },
-        {
-          "text": "Can't believe you are that good"
-        },
-        {
-          "text": "How cool is this?"
-        },
-        {
-          "text": "Brilliant!"
-        },
-        {
-          "text": "I like what you did there! :)"
-        },
-        {
-          "text": "I'm looking forward to working with you again! :)"
-        },
-        {
-          "text": "Love your work"
-        },
-        {
-          "text": "Ok thank you"
-        },
-        {
-          "text": "You've been so helpful :)"
-        },
-        {
-          "text": "This is good"
-        },
-        {
-          "text": "This is great"
         }
       ],
       "description": "Express positive sentiment or gratitude."
@@ -1262,34 +1275,16 @@
       "intent": "Bot_Control_Ignore_Undo",
       "examples": [
         {
-          "text": "Hold on! I think I want to do it differently."
-        },
-        {
-          "text": "It's not what I mean"
-        },
-        {
           "text": "Ignore this"
         },
         {
-          "text": "Never"
-        },
-        {
-          "text": "Not yet"
-        },
-        {
-          "text": "Nothing"
-        },
-        {
-          "text": "Wait! Let's back up few steps and do that again"
-        },
-        {
-          "text": "I didn't mean to do that actually, let's go back"
-        },
-        {
-          "text": "I did not mean that?"
+          "text": "Let us redo that again!"
         },
         {
           "text": "I change my mind."
+        },
+        {
+          "text": "Hold on! I think I want to do it differently."
         },
         {
           "text": "Cancel"
@@ -1298,10 +1293,28 @@
           "text": "Actually, I take that back"
         },
         {
-          "text": "Let us redo that again!"
+          "text": "Never mind"
         },
         {
-          "text": "Never mind"
+          "text": "Nothing"
+        },
+        {
+          "text": "Not yet"
+        },
+        {
+          "text": "Wait! Let's back up few steps and do that again"
+        },
+        {
+          "text": "Never"
+        },
+        {
+          "text": "I didn't mean to do that actually, let's go back"
+        },
+        {
+          "text": "It's not what I mean"
+        },
+        {
+          "text": "I did not mean that?"
         }
       ],
       "description": "Ask the bot to take one step back."
@@ -1313,16 +1326,19 @@
           "text": "{\"Poopy\"}"
         },
         {
-          "text": "; -- {} { } \" \" |\\ /"
+          "text": "D a m n "
         },
         {
-          "text": "{}"
+          "text": "Multi- line test"
         },
         {
           "text": "--;"
         },
         {
-          "text": "Multi- line test"
+          "text": "{}"
+        },
+        {
+          "text": "; -- {} { } \" \" |\\ /"
         }
       ],
       "description": "Messing with the bot stuff"
@@ -1331,10 +1347,10 @@
       "intent": "good_morning",
       "examples": [
         {
-          "text": "G'morning!"
+          "text": "good mornin"
         },
         {
-          "text": "Good morning, Niko"
+          "text": "G'morning!"
         },
         {
           "text": "Morning!"
@@ -1343,7 +1359,7 @@
           "text": "Good morning"
         },
         {
-          "text": "good mornin"
+          "text": "Good morning, Niko"
         }
       ]
     }
@@ -1480,11 +1496,11 @@
       "values": [
         {
           "type": "synonyms",
-          "value": "lift",
+          "value": "cat_noises",
           "synonyms": [
-            "pick up",
-            "picks up",
-            "lifts up"
+            "*Confused cat noises*",
+            "cat noises",
+            "confused cat noises"
           ]
         },
         {
@@ -1512,9 +1528,28 @@
         },
         {
           "type": "synonyms",
+          "value": "lift",
+          "synonyms": [
+            "pick up",
+            "picks up",
+            "lifts up",
+            "lifts"
+          ]
+        },
+        {
+          "type": "synonyms",
           "value": "hug",
           "synonyms": [
-            "hugs"
+            "hugs",
+            "huggles",
+            "huggle"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "pat",
+          "synonyms": [
+            "pats"
           ]
         }
       ],
@@ -1685,7 +1720,9 @@
             "douche",
             "fkn",
             "boob",
-            "boobs"
+            "boobs",
+            "lewd",
+            "D a m n"
           ]
         },
         {
@@ -2135,7 +2172,7 @@
           {
             "values": [
               {
-                "text": "Of course I remember Calamus, $person!"
+                "text": "Of course I remember Calamus, $person! :niko_speak:"
               }
             ],
             "response_type": "text",
@@ -2156,10 +2193,11 @@
           {
             "values": [
               {
-                "text": "Of course I remember Alula, $person!"
+                "text": "Of course I remember Alula, $person! :niko_speak:"
               }
             ],
-            "response_type": "text"
+            "response_type": "text",
+            "selection_policy": "sequential"
           }
         ]
       },
@@ -2176,13 +2214,13 @@
           {
             "values": [
               {
-                "text": "Of course I remember Calamus and Alula! They were so nice!"
+                "text": "Of course I remember Calamus and Alula! They were so nice! :niko_speak:"
               },
               {
-                "text": "I haven't forgotten Calamus and Alula, $person, don't worry!"
+                "text": "I haven't forgotten Calamus and Alula, $person, don't worry! :niko_83c:"
               },
               {
-                "text": "Calamus and Alula were so nice to us! I miss them..."
+                "text": "Calamus and Alula were so nice to us! I miss them... :niko_upset2:"
               }
             ],
             "response_type": "text",
@@ -2222,10 +2260,11 @@
           {
             "values": [
               {
-                "text": "I couldn't forget my own mama, $person! Besides, now I'm home!"
+                "text": "I couldn't forget my own mama, $person! Besides, now I'm home! :niko_smile:"
               }
             ],
-            "response_type": "text"
+            "response_type": "text",
+            "selection_policy": "sequential"
           }
         ]
       },
@@ -2366,19 +2405,19 @@
           {
             "values": [
               {
-                "text": "Yikes!"
+                "text": "Yikes! :niko_surprised:"
               },
               {
-                "text": "That sounds dangerous..."
+                "text": "That sounds dangerous... :niko_shock:"
               },
               {
-                "text": "Mama said that could get me hurt..."
+                "text": "Mama said that could get me hurt... :niko_upset_meow:"
               },
               {
-                "text": "I'm a little afraid of that..."
+                "text": "I'm a little afraid of that... :niko_upset2:"
               },
               {
-                "text": "That sounds kinda scary..."
+                "text": "That sounds kinda scary... :niko_distressed:"
               }
             ],
             "response_type": "text",
@@ -2399,16 +2438,35 @@
           {
             "values": [
               {
-                "text": "Hey! I don't think you're supposed to say that!"
+                "text": "You're being rude but I don't know the specifics."
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "node_23_1555085096210",
+      "metadata": {},
+      "dialog_node": "node_3_1557957783319",
+      "previous_sibling": "node_5_1555367124712"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hey! I don't think you're supposed to say that! :niko_shock:"
               },
               {
-                "text": "That's not very nice!"
+                "text": "That's not very nice! :niko_upset_meow:"
               },
               {
-                "text": "Don't say that!"
+                "text": "Don't say that! :niko_speak:"
               },
               {
-                "text": "That's very rude."
+                "text": "That's very rude. :niko_surprised:"
               }
             ],
             "response_type": "text",
@@ -2431,7 +2489,7 @@
           {
             "values": [
               {
-                "text": "$person, are you trying to talk about me?"
+                "text": "$person, are you trying to talk about me? :niko3:"
               }
             ],
             "response_type": "text"
@@ -2828,7 +2886,7 @@
           {
             "values": [
               {
-                "text": "You don't look like a cat..."
+                "text": "You don't look like a cat... :niko3:"
               },
               {
                 "text": "I don't think so. :niko_83c:"
@@ -2855,10 +2913,10 @@
                 "text": "You're $person! :niko_speak:"
               },
               {
-                "text": "You're $person! Don't worry, I didn't forget!"
+                "text": "You're $person! Don't worry, I didn't forget! :niko_83c:"
               },
               {
-                "text": "Did you forget your own name? You're $person, of course!"
+                "text": "Did you forget your own name? You're $person, of course! :niko_speak:"
               }
             ],
             "response_type": "text",
@@ -3147,10 +3205,11 @@
           {
             "values": [
               {
-                "text": "Hm?"
+                "text": "Hm? :niko_what:"
               }
             ],
-            "response_type": "text"
+            "response_type": "text",
+            "selection_policy": "sequential"
           }
         ]
       },
@@ -3167,10 +3226,11 @@
           {
             "values": [
               {
-                "text": "At my village!"
+                "text": "At my village! :niko_smile:"
               }
             ],
-            "response_type": "text"
+            "response_type": "text",
+            "selection_policy": "sequential"
           }
         ]
       },
@@ -3187,10 +3247,11 @@
           {
             "values": [
               {
-                "text": "...not a cat"
+                "text": "...not a cat :niko:"
               }
             ],
-            "response_type": "text"
+            "response_type": "text",
+            "selection_policy": "sequential"
           }
         ]
       },
@@ -3263,7 +3324,7 @@
           {
             "values": [
               {
-                "text": "My name is Niko! Did you forget...?"
+                "text": "My name is Niko! Did you forget...? :niko_shock:"
               }
             ],
             "response_type": "text",
@@ -3471,13 +3532,13 @@
           {
             "values": [
               {
-                "text": "Yikes!"
+                "text": "Yikes! :niko_surprised:"
               },
               {
-                "text": "Is that a threat...?"
+                "text": "Is that a threat...? :niko_shock:"
               },
               {
-                "text": "You're kind of scaring me, $person..."
+                "text": "You're kind of scaring me, $person... :niko_wtf2:"
               }
             ],
             "response_type": "text",
@@ -4018,19 +4079,26 @@
       "previous_sibling": "node_3_1547091601199"
     },
     {
+      "type": "folder",
+      "title": "Based on Specific Asks found on askblogs",
+      "metadata": {},
+      "dialog_node": "node_8_1555045398717",
+      "previous_sibling": "node_2_1557957755868"
+    },
+    {
       "type": "standard",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "Hi, who's there?"
+                "text": "Hi, who's there? :niko_distressed_talk:"
               },
               {
-                "text": "Uh... Who are you?"
+                "text": "Uh... Who are you? :niko5:"
               },
               {
-                "text": "You never told me your name..."
+                "text": "You never told me your name... :niko_distressed2:"
               }
             ],
             "response_type": "text",
@@ -4109,6 +4177,38 @@
       "previous_sibling": "node_1_1555040696445"
     },
     {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "*nuzzles the hand*"
+              },
+              {
+                "text": "*comforted cat noises* :niko_eyesclosed2:"
+              },
+              {
+                "text": "Stop! You're gonna make me purr! :niko_shock:"
+              },
+              {
+                "text": "Mmmhmm…"
+              },
+              {
+                "text": "*Purrs*"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "@actions:pat",
+      "dialog_node": "node_2_1557957755868",
+      "previous_sibling": "node_1_1557957070707"
+    },
+    {
       "type": "folder",
       "title": "Unknown/Clarify Known Entity",
       "metadata": {},
@@ -4151,7 +4251,7 @@
           "mcr": true
         }
       },
-      "conditions": "#hug",
+      "conditions": "#action_to_Niko",
       "digress_in": "does_not_return",
       "dialog_node": "node_3_1547091601199",
       "digress_out": "allow_all",
@@ -4221,10 +4321,29 @@
       "previous_sibling": "node_2_1554492525344"
     },
     {
-      "type": "folder",
-      "title": "Based on Specific Asks found on askblogs",
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hey! That sounds like me a little!"
+              },
+              {
+                "text": "*reciprocated cat noises*"
+              },
+              {
+                "text": "Sorry… I didn't mean to confuse you."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
       "metadata": {},
-      "dialog_node": "node_8_1555045398717",
+      "conditions": "@actions:cat_noises",
+      "dialog_node": "node_1_1557957070707",
       "previous_sibling": "node_3_1555041206547"
     },
     {
@@ -4323,19 +4442,19 @@
           {
             "values": [
               {
-                "text": "You're welcome!"
+                "text": "You're welcome! :niko_smile:"
               },
               {
-                "text": "Of course!"
+                "text": "Of course! :niko_smile:"
               },
               {
-                "text": "Certainly!"
+                "text": "Certainly! :niko_smile:"
               },
               {
-                "text": "Mhm!"
+                "text": "Mhm! :niko_smile:"
               },
               {
-                "text": "Thank you!"
+                "text": "Thank you! :niko_smile:"
               }
             ],
             "response_type": "text",

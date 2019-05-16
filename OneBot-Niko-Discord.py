@@ -382,7 +382,7 @@ async def on_message(message, recursed=False):
 
 
 async def reply(message, response):
-    lastEmojiIndex = 0  # The position of the last/furthest emoji. This one is the face to make.
+    lastEmojiIndex = -1  # The position of the last/furthest emoji. This one is the face to make.
     lastEmojiName = ""  # The name of the last/furthest emoji. This one is the face to make.
     EMOJI_URL_PATH = "https://raw.githubusercontent.com/alset333/OneBot-Niko/master/Resources/Images/"
 
@@ -394,8 +394,10 @@ async def reply(message, response):
             lastEmojiName = e.name  # And save the name too
 
     # Remove the last emoji from the message
-    if lastEmojiIndex:  # If we found one
-        response = response[:lastEmojiIndex - 1] + response[lastEmojiIndex + len(lastEmojiName) + 2:]
+    if lastEmojiIndex > -1:  # If we found one
+        pre = response[:lastEmojiIndex]
+        post = response[lastEmojiIndex + len(lastEmojiName) + 2:]
+        response = pre + post
 
     # Replace any name-text emojis (looks like :niko:)
     # with corresponding name-id text for discord (looks like <:niko:012345678901234567>)

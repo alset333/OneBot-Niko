@@ -20,10 +20,9 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 """
 
 from discord.ext import commands
-from discord import Game, Status
+from discord import Game, Status, embeds
 import os, sys
 import WatsonAssistantV2Utility
-from time import sleep, time
 from Logger import log, close_log
 import json
 from concurrent.futures._base import CancelledError
@@ -31,6 +30,7 @@ import asyncio
 from datetime import datetime, timezone
 
 VERSION = '2019-01-05'
+GROUP_TIME = 3  # How long to keep the queue grouped
 
 # Watson keys
 api_path = os.path.normpath('ID/API_KEY.txt')
@@ -65,7 +65,6 @@ assistants = {}  # A dictionary matching each "message.author" to their "assista
 contexts = {}  # A dictionary matching each "message.author" to their "context" as {author : context}
 queues = {}  # A dictionary matching each "message.author" to their "queue" as {author : queue}
 
-GROUP_TIME = 5  # How long to keep the queue grouped
 
 # Load save data
 save_file_path = os.path.normpath('save_data.json')
@@ -383,6 +382,20 @@ async def on_message(message, recursed=False):
 
 
 async def reply(message, response):
+    lastEmojiIndex = 0  # The position of the last/furthest emoji. This one is the face to make.
+    lastEmojiName = ""  # The name of the last/furthest emoji. This one is the face to make.
+    EMOJI_URL_PATH = "https://raw.githubusercontent.com/alset333/OneBot-Niko/master/Resources/Images/"
+
+    # Find the last emoji, this is the one that should be used as the face
+    for e in bot.emojis:  # look through all visible emojis (all servers the bot is in)
+        thisEmojiIndex = response.rfind(":" + e.name + ":")  # Get the last occurrence of the emoji
+        if lastEmojiIndex < thisEmojiIndex:  # If this is later than the current-latest...
+            lastEmojiIndex = thisEmojiIndex  # Update this to be the new-latest
+            lastEmojiName = e.name  # And save the name too
+
+    # Remove the last emoji from the message
+    if lastEmojiIndex:  # If we found one
+        response = response[:lastEmojiIndex - 1] + response[lastEmojiIndex + len(lastEmojiName) + 2:]
 
     # Replace any name-text emojis (looks like :niko:)
     # with corresponding name-id text for discord (looks like <:niko:012345678901234567>)
@@ -390,11 +403,16 @@ async def reply(message, response):
     for e in bot.emojis:  # look through all visible emojis (all servers the bot is in)
         response = response.replace(":" + e.name + ":", "<:" + e.name + ":" + str(e.id) + ">")
 
+    # Embed-ify the message!
+    em = embeds.Embed(color=0xFFDE29,
+                      description=response)
+    em.set_thumbnail(url=EMOJI_URL_PATH + lastEmojiName + ".png")
+    # em.set_footer(text="Ignore this for now: " + str(message.author.id))
+
     if message.guild is None:  # DMs, just respond
-        msg = response
+        await message.channel.send(embed=em)
     else:  # Servers, be sure to mention them
-        msg = '{0.mention}\n{1}'.format(message.author, response)
-    await message.channel.send(msg)
+        await message.channel.send(message.author.mention, embed=em)
 
 load_context()
 bot.run(token)

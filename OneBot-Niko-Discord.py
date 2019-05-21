@@ -105,14 +105,21 @@ def save_context():
     save_file.truncate()
     log("Saved!")
 
+bot_emoji_names = []
 
 @bot.event
 async def on_ready():
+    global bot_emoji_names
     global update_channel_id
     log('Niko has logged in as')
     log(bot.user.name)
     log(bot.user.id)
     log("Available Emojis:", bot.emojis)
+
+    bot_emoji_names = []
+    for emoji in bot.emojis:
+        bot_emoji_names.append(emoji.name)
+
     log('------', flush=True)
 
     game = Game("with friends!")
@@ -325,6 +332,7 @@ async def send_response(lines, message):
 
 @bot.listen()
 async def on_message(message, recursed=False):
+    global bot_emoji_names
     log("Message:", message)
     log("Message content:", message.content)
     if message.author.bot:  # If the bot sent the message
@@ -375,9 +383,10 @@ async def on_message(message, recursed=False):
         # Use the user's message to get a response from Watson Assistant. Update the context.
         lines, contextVar = get_response(message, contextVar)
 
+        # Translate the response lines
         for i in range(0, len(lines)):
             if lines[i]['response_type'] == 'text':
-                lines[i]['text'] = translator.translate_text(lines[i]['text'], 'en', userlang)
+                lines[i]['text'] = translator.translate_text(lines[i]['text'], 'en', userlang, emoji_names=bot_emoji_names)
 
         # Send the response from Watson Assistant to the User as a reply to the message.
         await send_response(lines, message)

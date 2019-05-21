@@ -22,6 +22,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 from watson_developer_cloud import LanguageTranslatorV3
 from watson_developer_cloud.watson_service import WatsonApiException
+import re
 
 # 0 Dallas, 1 Washington DC, 2 Frankfurt, 3 Sydney, 4 Tokyo, 5 London
 LOCATION_NUMBER = 1
@@ -73,17 +74,50 @@ class WatsonTranslator:
 
         return input_language
 
-    def translate_text(self, input_text, input_language, output_language):
+    def translate_text(self, input_text, input_language, output_language, emoji_names=[]):
         if input_language == output_language:
             return input_text
 
         print("Translating", input_text, input_language, output_language)
 
-        output_text = self.language_translator.translate(
-            text=[input_text],
+
+        input_list = re.split('(:|_|\*|~~)', input_text)
+
+        output_list = self.language_translator.translate(
+            text=input_list,
             model_id=input_language + '-' + output_language).get_result()
-        output_text = output_text['translations'][0]['translation']
+
+        print('==============================')
+        print(input_list)
+        print(output_list['translations'])
+        print('==============================')
+
+
+        output_text = ""
+
+        for i in range(0, len(output_list['translations'])):
+            added_char = False
+            if input_list[i] == "":
+                continue
+
+            for c in [':', '_', '*', '~~']:
+                if input_list[i] == c:
+                    output_text += c
+                    added_char = True
+                    break
+
+            if not added_char:
+                if input_list[i] in emoji_names and input_list[i + 1] == ":":
+                    output_text += input_list[i]
+                elif i < len(output_list['translations']) - 2 and ((input_list[i] + input_list[i+1] + input_list[i+2]) in emoji_names):
+                        output_text += input_list[i] + input_list[i+1] + input_list[i+2]
+                        input_list[i] = ""
+                        input_list[i + 1] = ""
+                        input_list[i + 2] = ""
+                else:
+                    output_text += output_list['translations'][i]['translation']
 
         print("Result:", output_text)
 
         return output_text
+

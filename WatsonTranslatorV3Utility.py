@@ -68,11 +68,15 @@ class WatsonTranslator:
         print("Detecting", input_text)
 
         input_language = self.language_translator.identify(input_text).get_result()
+        confidence = input_language["languages"][pick_language]['confidence']
         input_language = input_language["languages"][pick_language]["language"]
 
-        print("Result:", input_language)
+        print("Result:", input_language, confidence)
 
-        return input_language
+        if confidence > 0.3:
+            return input_language
+        else:
+            return 'en'
 
     def translate_text(self, input_text, input_language, output_language, emoji_names=[]):
         if input_language == output_language:

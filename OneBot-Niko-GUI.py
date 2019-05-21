@@ -38,7 +38,7 @@ if os.path.isdir(steam_location):
 
 print(steam_location)
 
-api_path = os.path.normpath('ID/API_KEY.txt')
+api_path = os.path.normpath('ID/ASSISTANT_API_KEY.txt')
 assistant_path = os.path.normpath('ID/ASSISTANT_ID.txt')
 API_KEY = open(api_path).read()
 ASSISTANT_ID = open(assistant_path).read()

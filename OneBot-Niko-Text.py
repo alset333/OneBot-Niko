@@ -31,7 +31,7 @@ __version__ = '0.2.0'
 
 VERSION = '2019-01-05'
 
-api_path = os.path.normpath('ID/API_KEY.txt')
+api_path = os.path.normpath('ID/ASSISTANT_API_KEY.txt')
 assistant_path = os.path.normpath('ID/ASSISTANT_ID.txt')
 API_KEY = str.rstrip(open(api_path).read())  # Load API Key from file, removing trailing whitespace
 ASSISTANT_ID = str.rstrip(open(assistant_path).read())  # Load Assistant ID from file, removing trailing whitespace

@@ -23,20 +23,26 @@ from discord.ext import commands
 from discord import Game, Status, embeds
 import os, sys
 import WatsonAssistantV2Utility
+import WatsonTranslatorV3Utility
 from Logger import log, close_log
 import json
 from concurrent.futures._base import CancelledError
 import asyncio
 from datetime import datetime, timezone
 
-VERSION = '2019-01-05'
+VERSION = '2019-05-20'
 GROUP_TIME = 3  # How long to keep the queue grouped
 
 # Watson keys
-api_path = os.path.normpath('ID/API_KEY.txt')
-assistant_path = os.path.normpath('ID/ASSISTANT_ID.txt')
-API_KEY = str.rstrip(open(api_path).read())  # Load API Key from file, removing trailing whitespace
-ASSISTANT_ID = str.rstrip(open(assistant_path).read())  # Load Assistant ID from file, removing trailing whitespace
+assistant_api_path = os.path.normpath('ID/ASSISTANT_API_KEY.txt')
+assistant_id_path = os.path.normpath('ID/ASSISTANT_ID.txt')
+translator_api_path = os.path.normpath('ID/TRANSLATOR_API_KEY.txt')
+ASSISTANT_API_KEY = str.rstrip(open(assistant_api_path).read())  # Load API Key from file, removing trailing whitespace
+ASSISTANT_ID = str.rstrip(open(assistant_id_path).read())  # Load Assistant ID from file, removing trailing whitespace
+TRANSLATOR_API_KEY = str.rstrip(open(translator_api_path).read())
+
+translator = WatsonTranslatorV3Utility.WatsonTranslator(VERSION, TRANSLATOR_API_KEY)
+
 
 # Discord keys
 token_path = os.path.normpath('ID/DISCORD_BOT_TOKEN.txt')
@@ -274,7 +280,7 @@ def get_response(message, contextVar):
         a = assistants[message.author.id]  # Use their assistant
         lines, contextVar = a.message(message.content, contextVar)  # And send their message
     else:  # If they don't have an assistant yet
-        a = WatsonAssistantV2Utility.WatsonAssistant(VERSION, API_KEY, ASSISTANT_ID)  # Make one
+        a = WatsonAssistantV2Utility.WatsonAssistant(VERSION, ASSISTANT_API_KEY, ASSISTANT_ID)  # Make one
         assistants[message.author.id] = a  # And save it
 
         if contextVar == []:  # If their context is empty
@@ -361,7 +367,10 @@ async def on_message(message, recursed=False):
             total_content += msg.content + " "
         message.content = total_content
 
-        print("Full content to send is", total_content, "Recursive is", recursed)
+        print("Full content to send is", message.content, "Recursive is", recursed)
+
+        # Translate user's message to English
+        message.content = translator.auto_translate(message.content)[0]
 
         # Use the user's message to get a response from Watson Assistant. Update the context.
         lines, contextVar = get_response(message, contextVar)

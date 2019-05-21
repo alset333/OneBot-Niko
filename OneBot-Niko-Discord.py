@@ -370,10 +370,14 @@ async def on_message(message, recursed=False):
         print("Full content to send is", message.content, "Recursive is", recursed)
 
         # Translate user's message to English
-        message.content = translator.auto_translate(message.content)[0]
+        message.content, userlang = translator.auto_translate(message.content)
 
         # Use the user's message to get a response from Watson Assistant. Update the context.
         lines, contextVar = get_response(message, contextVar)
+
+        for i in range(0, len(lines)):
+            if lines[i]['response_type'] == 'text':
+                lines[i]['text'] = translator.translate_text(lines[i]['text'], 'en', userlang)
 
         # Send the response from Watson Assistant to the User as a reply to the message.
         await send_response(lines, message)

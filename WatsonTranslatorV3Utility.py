@@ -52,8 +52,6 @@ class WatsonTranslator:
             return input_text, output_language
 
         input_language = self.detect_language(input_text, pick_language=pick_language)
-        if input_language == output_language:
-            return input_text, input_language
 
         try:
             output_text = self.translate_text(input_text, input_language, output_language)
@@ -76,6 +74,9 @@ class WatsonTranslator:
         return input_language
 
     def translate_text(self, input_text, input_language, output_language):
+        if input_language == output_language:
+            return input_text
+
         print("Translating", input_text, input_language, output_language)
 
         output_text = self.language_translator.translate(
